@@ -6,6 +6,7 @@ import "../styles/cp-style/cp.css";
 
 // importing cp-guide component
 import ProgrammingLanguages from "../components/Cp-components/ProgrammingLanguages";
+import DataTypes from "../components/Cp-components/DataTypes";
 import LoopInfo from "../components/Cp-components/LoopInfo";
 import ArrayInfo from "../components/Cp-components/ArrayInfo";
 
@@ -30,6 +31,16 @@ const CpGuide = () => {
               }
             >
               Programming Languages
+            </p>
+            <p
+              onClick={() => {
+                handleButtonClick("Data Types and Variables");
+              }}
+              className={
+                Page === "Data Types and Variables" ? "cp-p-active" : "cp-p"
+              }
+            >
+              Data Types and Variables
             </p>
             <p
               onClick={() => {
@@ -144,6 +155,7 @@ const CpGuide = () => {
         <div className="cp-topic-details">
           <h1>{Page}</h1>
           {Page === "Programming Languages" && <ProgrammingLanguages />}
+          {Page === "Data Types and Variables" && <DataTypes />}
           {Page === "loop" && <LoopInfo />}
           {Page === "array" && <ArrayInfo />}
         </div>

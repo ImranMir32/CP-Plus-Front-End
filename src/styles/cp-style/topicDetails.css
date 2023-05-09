@@ -27,3 +27,8 @@ ul li {
   font-weight: bold;
   text-decoration: underline;
 }
+
+.colorfull {
+  color: rgb(19, 181, 221);
+  font-weight: bold;
+}
