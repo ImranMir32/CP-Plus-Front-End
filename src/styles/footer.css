@@ -1,0 +1,45 @@
+.footer-bottom--section {
+  padding-top: 7rem;
+}
+hr {
+  /* margin-bottom: 2rem; */
+  color: rgb(19, 181, 221);
+  height: 0.1px;
+}
+.container-footer {
+  /* color: white; */
+  padding-top: 0.5rem;
+  background-color: rgb(149, 222, 245);
+  /* background-color: black; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+.box-2 {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+.box-3 {
+  height: 3rem;
+  width: 3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.footer-text {
+  /* color: white; */
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.icons {
+  /* background-color: white; */
+  border-radius: 0.5rem;
+  color: white;
+  height: 2rem;
+  width: 2rem;
+}
+.icons:hover {
+  height: 2.5rem;
+  width: 2.5rem;
+}

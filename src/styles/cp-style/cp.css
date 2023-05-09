@@ -1,0 +1,41 @@
+.cp-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 6rem;
+  margin-left: 3rem;
+}
+
+/* cp topic box */
+.cp-topic-name {
+  width: 12rem;
+  height: 100%;
+}
+.cp-p {
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 5px;
+}
+.cp-p:hover {
+  background-color: rgb(183, 226, 236);
+}
+.cp-p-active {
+  background-color: rgb(19, 181, 221);
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+/* vertical line */
+.vertical-line {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  width: 1px;
+  height: 40rem;
+  background-color: rgb(19, 181, 221);
+}
+
+/* cp details box */
+.cp-topic-details {
+  width: 50rem;
+  height: 100%;
+}

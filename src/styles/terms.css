@@ -1,0 +1,19 @@
+.box-terms {
+  padding-top: 7rem;
+  padding-left: 7rem;
+  padding-right: 7rem;
+}
+.box-content-terms {
+  padding: 1.5rem;
+  background-color: white;
+}
+
+.box-content-terms p {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+ul li {
+  padding-top: 0.4rem;
+  margin-left: 2rem;
+}

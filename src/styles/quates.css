@@ -1,0 +1,17 @@
+.box-content-quates {
+  padding: 0.2rem;
+  /* background-color: white; */
+}
+.box-content-quates h1 {
+  color: rgb(19, 181, 221);
+}
+.box-content-home-text {
+  padding-top: 2rem;
+}
+.box-content-home-text h2 {
+  color: rgb(19, 181, 221);
+}
+.box-content-home-text p {
+  padding-top: 1.5rem;
+  font-weight: bold;
+}
