@@ -82,10 +82,7 @@ const OperatorsExpressions = () => {
             in their programs.
           </p>
 
-          <h3>
-            To know more about Programming languages you can visit following
-            sites :
-          </h3>
+          <h3>To know more you can visit following sites :</h3>
           <div className="outsite">
             <p>Blog Links :</p>
             <a
