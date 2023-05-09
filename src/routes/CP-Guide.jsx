@@ -7,6 +7,7 @@ import "../styles/cp-style/cp.css";
 // importing cp-guide component
 import ProgrammingLanguages from "../components/Cp-components/ProgrammingLanguages";
 import DataTypes from "../components/Cp-components/DataTypes";
+import OperatorsExpressions from "../components/Cp-components/OperatorsExpressions";
 import LoopInfo from "../components/Cp-components/LoopInfo";
 import ArrayInfo from "../components/Cp-components/ArrayInfo";
 
@@ -44,6 +45,16 @@ const CpGuide = () => {
             </p>
             <p
               onClick={() => {
+                handleButtonClick("Operators and Expressions");
+              }}
+              className={
+                Page === "Operators and Expressions" ? "cp-p-active" : "cp-p"
+              }
+            >
+              Operators and Expressions
+            </p>
+            <p
+              onClick={() => {
                 handleButtonClick("Loop");
               }}
               className={Page === "Loop" ? "cp-p-active" : "cp-p"}
@@ -58,71 +69,6 @@ const CpGuide = () => {
             >
               Array
             </p>
-            {/*
-            <p
-              onClick={() => {
-                handleButtonClick("loop");
-              }}
-              className="cp-p"
-            >
-              loop
-            </p>{" "}
-            <p
-              onClick={() => {
-                handleButtonClick("loop");
-              }}
-              className="cp-p"
-            >
-              loop
-            </p>{" "}
-            <p
-              onClick={() => {
-                handleButtonClick("loop");
-              }}
-              className="cp-p"
-            >
-              loop
-            </p>{" "}
-            <p
-              onClick={() => {
-                handleButtonClick("loop");
-              }}
-              className="cp-p"
-            >
-              loop
-            </p>{" "}
-            <p
-              onClick={() => {
-                handleButtonClick("loop");
-              }}
-              className="cp-p"
-            >
-              loop
-            </p>{" "}
-            <p
-              onClick={() => {
-                handleButtonClick("loop");
-              }}
-              className="cp-p"
-            >
-              loop
-            </p>{" "}
-            <p
-              onClick={() => {
-                handleButtonClick("loop");
-              }}
-              className="cp-p"
-            >
-              loop
-            </p>{" "}
-            <p
-              onClick={() => {
-                handleButtonClick("loop");
-              }}
-              className="cp-p"
-            >
-              loop
-            </p>*/}
           </div>
           <div className="intermediate">
             <h3>Intermediate section</h3>
@@ -156,6 +102,7 @@ const CpGuide = () => {
           <h1>{Page}</h1>
           {Page === "Programming Languages" && <ProgrammingLanguages />}
           {Page === "Data Types and Variables" && <DataTypes />}
+          {Page === "Operators and Expressions" && <OperatorsExpressions />}
           {Page === "loop" && <LoopInfo />}
           {Page === "array" && <ArrayInfo />}
         </div>
