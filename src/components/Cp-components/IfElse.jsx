@@ -17,17 +17,7 @@ const IfElse = () => {
 
           <p>The basic syntax of the if-else statement in C++ is as follows:</p>
 
-          <p className="colorfull">int count;</p>
-          <p>
-            if (condition){" "}
-            {
-              // Code to execute if the condition is true
-            }{" "}
-            else{" "}
-            {
-              // Code to execute if the condition is false
-            }
-          </p>
+          {/* <img src="" alt="" /> */}
 
           <p>
             In this syntax, the condition is a Boolean expression that evaluates

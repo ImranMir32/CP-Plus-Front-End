@@ -8,6 +8,7 @@ import "../styles/cp-style/cp.css";
 import ProgrammingLanguages from "../components/Cp-components/ProgrammingLanguages";
 import DataTypes from "../components/Cp-components/DataTypes";
 import OperatorsExpressions from "../components/Cp-components/OperatorsExpressions";
+import IfElse from "../components/Cp-components/IfElse";
 import LoopInfo from "../components/Cp-components/LoopInfo";
 import ArrayInfo from "../components/Cp-components/ArrayInfo";
 
@@ -52,6 +53,14 @@ const CpGuide = () => {
               }
             >
               Operators and Expressions
+            </p>
+            <p
+              onClick={() => {
+                handleButtonClick("If Else");
+              }}
+              className={Page === "If Else" ? "cp-p-active" : "cp-p"}
+            >
+              If Else
             </p>
             <p
               onClick={() => {
@@ -103,6 +112,7 @@ const CpGuide = () => {
           {Page === "Programming Languages" && <ProgrammingLanguages />}
           {Page === "Data Types and Variables" && <DataTypes />}
           {Page === "Operators and Expressions" && <OperatorsExpressions />}
+          {Page === "If Else" && <IfElse />}
           {Page === "loop" && <LoopInfo />}
           {Page === "array" && <ArrayInfo />}
         </div>
