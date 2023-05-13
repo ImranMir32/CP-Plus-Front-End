@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/cp-style/cp.css";
 import "../../styles/cp-style/topicDetails.css";
+import imgIfElse from "../../assets/if-else-statement.png";
 
 const IfElse = () => {
   return (
@@ -17,7 +18,7 @@ const IfElse = () => {
 
           <p>The basic syntax of the if-else statement in C++ is as follows:</p>
 
-          {/* <img src="" alt="" /> */}
+          <img className="IMG" src={imgIfElse} alt="If Else" />
 
           <p>
             In this syntax, the condition is a Boolean expression that evaluates
@@ -61,6 +62,156 @@ const IfElse = () => {
             </a>
 
             <p>Problem and Solution Links :</p>
+            <ul>
+              <li>
+                Write a program to find maximum between two numbers.
+                <p>
+                  Solution :{" "}
+                  <a
+                    href="https://pastebin.ubuntu.com/p/ntfMtjGf8j/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    https://pastebin.ubuntu.com/p/ntfMtjGf8j/
+                  </a>
+                </p>
+              </li>
+              <li>
+                Write a program to find maximum between three numbers.
+                <p>
+                  Solution :{" "}
+                  <a
+                    href="https://pastebin.ubuntu.com/p/KNK5Qyqng8/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    https://pastebin.ubuntu.com/p/KNK5Qyqng8/
+                  </a>
+                </p>
+              </li>
+              <li>
+                Write a program to check whether a year is leap year or not.
+                <p>
+                  Solution :{" "}
+                  <a
+                    href="https://pastebin.ubuntu.com/p/DRrfzcZVjx/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    https://pastebin.ubuntu.com/p/DRrfzcZVjx/
+                  </a>
+                </p>
+              </li>
+              <li>
+                Write a program to check whether a character is alphabet or not.
+                <p>
+                  Solution :{" "}
+                  <a
+                    href="https://pastebin.ubuntu.com/p/Z326v2FWvh/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    https://pastebin.ubuntu.com/p/Z326v2FWvh/
+                  </a>
+                </p>
+              </li>
+              <li>
+                Write a program to input any alphabet and check whether it is
+                vowel or consonant.
+                <p>
+                  Solution :{" "}
+                  <a
+                    href="https://pastebin.ubuntu.com/p/N2sfCXH5n6/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    https://pastebin.ubuntu.com/p/N2sfCXH5n6/
+                  </a>
+                </p>
+              </li>
+              <li>
+                Write a program to check whether a character is uppercase or
+                lowercase alphabet.
+                <p>
+                  Solution :{" "}
+                  <a
+                    href="https://pastebin.ubuntu.com/p/wXQGGS2pMR/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    https://pastebin.ubuntu.com/p/wXQGGS2pMR/
+                  </a>
+                </p>
+              </li>
+              <li>
+                Write a program to input week number and print week day.
+                <p>
+                  Solution :{" "}
+                  <a
+                    href="https://pastebin.ubuntu.com/p/Js9wqSQGmg/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    https://pastebin.ubuntu.com/p/Js9wqSQGmg/
+                  </a>
+                </p>
+              </li>
+              <li>
+                Write a program to input month number and print number of days
+                in that month.
+                <p>
+                  Solution :{" "}
+                  <a
+                    href="https://pastebin.ubuntu.com/p/r66TWtv6fT/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    https://pastebin.ubuntu.com/p/r66TWtv6fT/
+                  </a>
+                </p>
+              </li>
+              <li>
+                Write a program to calculate profit or loss.
+                <p>
+                  Solution :{" "}
+                  <a
+                    href="https://pastebin.ubuntu.com/p/QFcfmpds7n/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    https://pastebin.ubuntu.com/p/QFcfmpds7n/
+                  </a>
+                </p>
+              </li>
+              <li>
+                Write a program to input angles of a triangle and check whether
+                triangle is valid or not.
+                <p>
+                  Solution :{" "}
+                  <a
+                    href="https://pastebin.ubuntu.com/p/MCkmq2rppF/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    https://pastebin.ubuntu.com/p/MCkmq2rppF/
+                  </a>
+                </p>
+              </li>
+              <li>
+                Write a C program to input all sides of a triangle and check
+                whether triangle is valid or not.
+                <p>
+                  Solution :{" "}
+                  <a
+                    href="https://pastebin.ubuntu.com/p/mnJvFC5ZDg/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    https://pastebin.ubuntu.com/p/mnJvFC5ZDg/
+                  </a>
+                </p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
