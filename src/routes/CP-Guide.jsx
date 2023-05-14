@@ -16,6 +16,7 @@ import StringInfo from "../components/Cp-components/StringInfo";
 import FunctionInfo from "../components/Cp-components/FunctionInfo";
 import RecursionInfo from "../components/Cp-components/RecursionInfo";
 import TimeComplexity from "../components/Cp-components/TimeComplexity";
+import BitManipulation from "../components/Cp-components/BitManipulation";
 
 const CpGuide = () => {
   const [Page, setPage] = useState("Programming Languages");
@@ -124,6 +125,7 @@ const CpGuide = () => {
             >
               Recursion
             </p>
+
             <p
               onClick={() => {
                 handleButtonClick("Time complexity and Big O notation");
@@ -135,6 +137,15 @@ const CpGuide = () => {
               }
             >
               Time complexity and Big O notation
+            </p>
+
+            <p
+              onClick={() => {
+                handleButtonClick("Bit manipulation");
+              }}
+              className={Page === "Bit manipulation" ? "cp-p-active" : "cp-p"}
+            >
+              Bit manipulation
             </p>
           </div>
           <div className="intermediate">
@@ -178,6 +189,7 @@ const CpGuide = () => {
           {Page === "Function" && <FunctionInfo />}
           {Page === "Recursion" && <RecursionInfo />}
           {Page === "Time complexity and Big O notation" && <TimeComplexity />}
+          {Page === "Bit manipulation" && <BitManipulation />}
         </div>
       </div>
       <Footer />
