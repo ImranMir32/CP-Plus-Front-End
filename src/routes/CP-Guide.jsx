@@ -124,7 +124,7 @@ const CpGuide = () => {
           {Page === "If Else" && <IfElse />}
           {Page === "Input/Output" && <InputOutput />}
           {Page === "Loops" && <LoopInfo />}
-          {Page === "array" && <ArrayInfo />}
+          {Page === "Array" && <ArrayInfo />}
         </div>
       </div>
       <Footer />
