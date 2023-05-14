@@ -13,6 +13,7 @@ import IfElse from "../components/Cp-components/IfElse";
 import LoopInfo from "../components/Cp-components/LoopInfo";
 import ArrayInfo from "../components/Cp-components/ArrayInfo";
 import StringInfo from "../components/Cp-components/StringInfo";
+import FunctionInfo from "../components/Cp-components/FunctionInfo";
 
 const CpGuide = () => {
   const [Page, setPage] = useState("Programming Languages");
@@ -36,6 +37,7 @@ const CpGuide = () => {
             >
               Programming Languages
             </p>
+
             <p
               onClick={() => {
                 handleButtonClick("Data Types and Variables");
@@ -46,6 +48,7 @@ const CpGuide = () => {
             >
               Data Types and Variables
             </p>
+
             <p
               onClick={() => {
                 handleButtonClick("Operators and Expressions");
@@ -56,6 +59,7 @@ const CpGuide = () => {
             >
               Operators and Expressions
             </p>
+
             <p
               onClick={() => {
                 handleButtonClick("Input/Output");
@@ -64,6 +68,7 @@ const CpGuide = () => {
             >
               Input/Output
             </p>
+
             <p
               onClick={() => {
                 handleButtonClick("If Else");
@@ -72,6 +77,7 @@ const CpGuide = () => {
             >
               If Else
             </p>
+
             <p
               onClick={() => {
                 handleButtonClick("Loops");
@@ -80,6 +86,7 @@ const CpGuide = () => {
             >
               Loops
             </p>
+
             <p
               onClick={() => {
                 handleButtonClick("Array");
@@ -88,6 +95,7 @@ const CpGuide = () => {
             >
               Array
             </p>
+
             <p
               onClick={() => {
                 handleButtonClick("String");
@@ -95,6 +103,15 @@ const CpGuide = () => {
               className={Page === "String" ? "cp-p-active" : "cp-p"}
             >
               String
+            </p>
+
+            <p
+              onClick={() => {
+                handleButtonClick("Function");
+              }}
+              className={Page === "Function" ? "cp-p-active" : "cp-p"}
+            >
+              Function
             </p>
           </div>
           <div className="intermediate">
@@ -135,6 +152,7 @@ const CpGuide = () => {
           {Page === "Loops" && <LoopInfo />}
           {Page === "Array" && <ArrayInfo />}
           {Page === "String" && <StringInfo />}
+          {Page === "Function" && <FunctionInfo />}
         </div>
       </div>
       <Footer />
