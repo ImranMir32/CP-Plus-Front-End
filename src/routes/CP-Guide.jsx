@@ -14,6 +14,7 @@ import LoopInfo from "../components/Cp-components/LoopInfo";
 import ArrayInfo from "../components/Cp-components/ArrayInfo";
 import StringInfo from "../components/Cp-components/StringInfo";
 import FunctionInfo from "../components/Cp-components/FunctionInfo";
+import RecursionInfo from "../components/Cp-components/RecursionInfo";
 
 const CpGuide = () => {
   const [Page, setPage] = useState("Programming Languages");
@@ -113,6 +114,15 @@ const CpGuide = () => {
             >
               Function
             </p>
+
+            <p
+              onClick={() => {
+                handleButtonClick("Recursion");
+              }}
+              className={Page === "Recursion" ? "cp-p-active" : "cp-p"}
+            >
+              Recursion
+            </p>
           </div>
           <div className="intermediate">
             <h3>Intermediate section</h3>
@@ -153,6 +163,7 @@ const CpGuide = () => {
           {Page === "Array" && <ArrayInfo />}
           {Page === "String" && <StringInfo />}
           {Page === "Function" && <FunctionInfo />}
+          {Page === "Recursion" && <RecursionInfo />}
         </div>
       </div>
       <Footer />
