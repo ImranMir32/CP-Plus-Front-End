@@ -25,21 +25,37 @@
   border-radius: 5px;
 }
 
+.scrollable-section {
+  height: 33rem;
+  overflow-y: scroll;
+}
+
 /* vertical line */
 .vertical-line {
   margin-left: 2rem;
   margin-right: 2rem;
-  width: 1px;
-  height: 40rem;
+  width: 2px;
+  height: 34rem;
   background-color: rgb(19, 181, 221);
+}
+
+.cp-topic-and-ad {
+  display: flex;
+  flex-direction: row;
 }
 
 /* cp details box */
 .cp-topic-details {
-  width: 50rem;
+  width: 52rem;
   height: 100%;
 }
 
 .cp-content {
   margin-bottom: 0.5rem;
+}
+
+.ad {
+  width: 10rem;
+  height: 100%;
+  /* background-color: red; */
 }
