@@ -12,6 +12,7 @@ import InputOutput from "../components/Cp-components/InputOutput";
 import IfElse from "../components/Cp-components/IfElse";
 import LoopInfo from "../components/Cp-components/LoopInfo";
 import ArrayInfo from "../components/Cp-components/ArrayInfo";
+import StringInfo from "../components/Cp-components/StringInfo";
 
 const CpGuide = () => {
   const [Page, setPage] = useState("Programming Languages");
@@ -87,6 +88,14 @@ const CpGuide = () => {
             >
               Array
             </p>
+            <p
+              onClick={() => {
+                handleButtonClick("String");
+              }}
+              className={Page === "String" ? "cp-p-active" : "cp-p"}
+            >
+              String
+            </p>
           </div>
           <div className="intermediate">
             <h3>Intermediate section</h3>
@@ -125,6 +134,7 @@ const CpGuide = () => {
           {Page === "Input/Output" && <InputOutput />}
           {Page === "Loops" && <LoopInfo />}
           {Page === "Array" && <ArrayInfo />}
+          {Page === "String" && <StringInfo />}
         </div>
       </div>
       <Footer />
