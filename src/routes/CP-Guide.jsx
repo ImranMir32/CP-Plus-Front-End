@@ -15,6 +15,7 @@ import ArrayInfo from "../components/Cp-components/ArrayInfo";
 import StringInfo from "../components/Cp-components/StringInfo";
 import FunctionInfo from "../components/Cp-components/FunctionInfo";
 import RecursionInfo from "../components/Cp-components/RecursionInfo";
+import TimeComplexity from "../components/Cp-components/TimeComplexity";
 
 const CpGuide = () => {
   const [Page, setPage] = useState("Programming Languages");
@@ -123,6 +124,18 @@ const CpGuide = () => {
             >
               Recursion
             </p>
+            <p
+              onClick={() => {
+                handleButtonClick("Time complexity and Big O notation");
+              }}
+              className={
+                Page === "Time complexity and Big O notation"
+                  ? "cp-p-active"
+                  : "cp-p"
+              }
+            >
+              Time complexity and Big O notation
+            </p>
           </div>
           <div className="intermediate">
             <h3>Intermediate section</h3>
@@ -164,6 +177,7 @@ const CpGuide = () => {
           {Page === "String" && <StringInfo />}
           {Page === "Function" && <FunctionInfo />}
           {Page === "Recursion" && <RecursionInfo />}
+          {Page === "Time complexity and Big O notation" && <TimeComplexity />}
         </div>
       </div>
       <Footer />
