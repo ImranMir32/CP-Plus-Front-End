@@ -28,7 +28,7 @@ const CpGuide = () => {
       <Navbar />
       <div className="cp-container">
         <div className="cp-topic-name">
-          <div className="beginner">
+          <div className="cp-content">
             <h3>Beginner section</h3>
             <p
               onClick={() => {
@@ -147,6 +147,9 @@ const CpGuide = () => {
             >
               Bit manipulation
             </p>
+          </div>
+          <div className="cp-content">
+            <h3>Searching and Sorting Algorithms</h3>
           </div>
           <div className="intermediate">
             <h3>Intermediate section</h3>
