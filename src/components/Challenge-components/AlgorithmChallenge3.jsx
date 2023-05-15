@@ -160,56 +160,127 @@ const AlgorithmChallenge3 = () => {
           </button>
           {Page === "Day 2" && (
             <div>
-              <p className="non-text">
-                Problem Link :{" "}
+              <h3>Binary Search:</h3>
+              <p>
+                Binary search is a commonly used search algorithm for finding a
+                specific element in a sorted array or list. It follows a
+                divide-and-conquer approach to quickly locate the target value
+                by repeatedly dividing the search space in half.
+              </p>
+              <p>Here's how binary search works:</p>
+
+              <ul>
+                <li>Begin with a sorted array or list.</li>
+                <li>
+                  Set the lower bound (left) and upper bound (right) of the
+                  search range to the first and last indices of the array,
+                  respectively.
+                </li>
+                <li>Calculate the middle index as (left + right) / 2.</li>
+                <li>
+                  Compare the middle element with the target value:
+                  <li>
+                    If the middle element is equal to the target value, the
+                    search is complete, and the index is returned.
+                  </li>
+                  <li>
+                    If the middle element is greater than the target value,
+                    update the upper bound (right) to the middle index - 1 and
+                    go to step 3.
+                  </li>
+                  <li>
+                    If the middle element is less than the target value, update
+                    the lower bound (left) to the middle index + 1 and go to
+                    step 3.
+                  </li>
+                </li>
+                <li>
+                  Repeat steps 3 and 4 until the target value is found or the
+                  search range is empty (left ${">"} right). In the latter case,
+                  the target value is not present in the array.
+                </li>
+              </ul>
+
+              <p>
+                Binary search has a time complexity of O(log n) since it halves
+                the search space at each iteration. This makes it significantly
+                more efficient than linear search, especially for large arrays.
+              </p>
+
+              <h3>To know more you can visit following sites :</h3>
+              <div className="outsite">
+                <p>Blog Links :</p>
                 <a
-                  href="https://codeforces.com/problemset/problem/1426/A"
+                  href="https://www.programiz.com/dsa/binary-search"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  https://codeforces.com/problemset/problem/1426/A
+                  https://www.programiz.com/dsa/binary-search
                 </a>
-              </p>
-              <p className="non-text">
-                Problem Link :{" "}
                 <a
-                  href="https://codeforces.com/problemset/problem/1426/A"
+                  href="https://www.geeksforgeeks.org/binary-search/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  https://codeforces.com/problemset/problem/1426/A
+                  https://www.geeksforgeeks.org/binary-search/
                 </a>
-              </p>
-              <p className="non-text">
-                Problem Link :{" "}
+
+                <p>Video Links :</p>
                 <a
-                  href="https://codeforces.com/problemset/problem/1426/A"
+                  href="https://www.youtube.com/watch?v=13ocRMSJy5M"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  https://codeforces.com/problemset/problem/1426/A
+                  https://www.youtube.com/watch?v=13ocRMSJy5M
                 </a>
-              </p>
-              <p className="non-text">
-                Problem Link :{" "}
                 <a
-                  href="https://codeforces.com/problemset/problem/1426/A"
+                  href="https://www.youtube.com/watch?v=ApvI7QUqGzI"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  https://codeforces.com/problemset/problem/1426/A
+                  https://www.youtube.com/watch?v=ApvI7QUqGzI
                 </a>
-              </p>
-              <p className="non-text">
-                Problem Link :{" "}
-                <a
-                  href="https://codeforces.com/problemset/problem/1426/A"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  https://codeforces.com/problemset/problem/1426/A
-                </a>
-              </p>
+
+                <p>Problem and Solution Links :</p>
+                <ul>
+                  <li>
+                    <p>
+                      Problem Link :{" "}
+                      <a
+                        href="https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/adjacent-sum-greater-than-k-f41e3ec4/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/adjacent-sum-greater-than-k-f41e3ec4/
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Problem Link :{" "}
+                      <a
+                        href="https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/adjacent-sum-greater-than-k-f41e3ec4/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/adjacent-sum-greater-than-k-f41e3ec4/
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Problem Link :{" "}
+                      <a
+                        href="https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/adjacent-sum-greater-than-k-f41e3ec4/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/adjacent-sum-greater-than-k-f41e3ec4/
+                      </a>
+                    </p>
+                  </li>
+                </ul>
+              </div>
             </div>
           )}
 
