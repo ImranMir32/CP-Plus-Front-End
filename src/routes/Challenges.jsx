@@ -6,6 +6,7 @@ import "../styles/challenge-style/cp.css";
 
 // importing Challenge component
 import ProblemSolving3 from "../components/Challenge-components/ProblemSolving3";
+import ProblemSolving7 from "../components/Challenge-components/ProblemSolving7";
 
 const Challenges = () => {
   const [Page, setPage] = useState("3 days Problem Solving");
@@ -117,6 +118,7 @@ const Challenges = () => {
             <div className="cp-topic-details">
               <h1>{Page}</h1>
               {Page === "3 days Problem Solving" && <ProblemSolving3 />}
+              {Page === "7 days Problem Solving" && <ProblemSolving7 />}
               {/* {Page === "Data Types and Variables" && <DataTypes />}
               {Page === "Operators and Expressions" && <OperatorsExpressions />}
               {Page === "If Else" && <IfElse />}
