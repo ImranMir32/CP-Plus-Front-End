@@ -10,6 +10,8 @@ import Footer from "../components/Footer";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Input } from "@material-ui/core";
+// import { Input } from "@material-ui/core";
 
 const onSubmit = async (values, actions) => {
   console.log(values);
@@ -56,7 +58,7 @@ const ContactUs = () => {
       name: "",
       email: "",
       phone: "",
-      // message: "",
+      message: "",
     },
     validationSchema: contactUsSchema,
     onSubmit,
@@ -84,7 +86,6 @@ const ContactUs = () => {
             {errors.name && touched.name && (
               <p className="error">{errors.name}</p>
             )}
-
             <label htmlFor="email">Email</label>
             <input
               value={values.email}
@@ -98,7 +99,6 @@ const ContactUs = () => {
             {errors.email && touched.email && (
               <p className="error">{errors.email}</p>
             )}
-
             {/* Mobile number */}
             <label htmlFor="phone">Phone number</label>
             <input
@@ -114,29 +114,20 @@ const ContactUs = () => {
               <p className="error">{errors.phone}</p>
             )}
 
-            {/* Mobile number
+            {/* text area */}
             <label htmlFor="message">Message</label>
-            <input
+            <Input
               value={values.message}
               onChange={handleChange}
               id="message"
-              type="text"
-              //   placeholder="Enter your Mobile number"
+              type="textarea"
+              placeholder="Type your message here..."
               onBlur={handleBlur}
-              className={errors.message && touched.message ? "input-error" : ""}
+              className="message-input"
             />
             {errors.message && touched.message && (
               <p className="error">{errors.message}</p>
-            )} */}
-            {/* <form onSubmit={handleSubmit}> */}
-            <textarea
-              className="message-input"
-              placeholder="Type your message here..."
-              // value={values.message}
-              // onChange={handleInputChange}
-            />
-            {/* <button type="submit">Send</button> */}
-            {/* </form> */}
+            )}
 
             <button disabled={isSubmitting} type="submit" class="button">
               Submit

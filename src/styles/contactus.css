@@ -1,9 +1,10 @@
 .contact-container {
   margin-top: 6rem;
-  margin-bottom: 6rem;
+  padding-bottom: 20rem;
   margin-left: 30rem;
   margin-right: 7rem;
 }
+
 .message-input {
   color: black;
   margin-top: 1rem;
@@ -13,5 +14,6 @@
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  background-color: white;
   resize: vertical;
 }

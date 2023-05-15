@@ -35,7 +35,7 @@ export const contactUsSchema = yup.object().shape({
     .string()
     .matches(phoneBd, { message: "Enter a valid phone number" })
     .required("Required"),
-  // message: yup.string().min(5).required(),
+  message: yup.string().min(5).required(),
 });
 
 export const signInSchema = yup.object().shape({
