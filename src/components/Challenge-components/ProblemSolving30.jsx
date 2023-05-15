@@ -20,7 +20,7 @@ const ProblemSolving30 = () => {
             Day 1
           </button>
           {Page === "Day 1" && (
-            <div>
+            <div className="outsite">
               <p>
                 Problem Link :{" "}
                 <a
@@ -83,7 +83,7 @@ const ProblemSolving30 = () => {
             Day 2
           </button>
           {Page === "Day 2" && (
-            <div>
+            <div className="outsite">
               <p>
                 Problem Link :{" "}
                 <a
@@ -146,7 +146,7 @@ const ProblemSolving30 = () => {
             Day 3
           </button>
           {Page === "Day 3" && (
-            <div>
+            <div className="outsite">
               <p>
                 Problem Link :{" "}
                 <a
@@ -208,7 +208,7 @@ const ProblemSolving30 = () => {
             Day 4
           </button>
           {Page === "Day 4" && (
-            <div>
+            <div className="outsite">
               <p>
                 Problem Link :{" "}
                 <a
@@ -271,7 +271,7 @@ const ProblemSolving30 = () => {
             Day 5
           </button>
           {Page === "Day 5" && (
-            <div>
+            <div className="outsite">
               <p>
                 Problem Link :{" "}
                 <a
@@ -334,7 +334,7 @@ const ProblemSolving30 = () => {
             Day 6
           </button>
           {Page === "Day 6" && (
-            <div>
+            <div className="outsite">
               <p>
                 Problem Link :{" "}
                 <a
@@ -396,7 +396,7 @@ const ProblemSolving30 = () => {
             Day 7
           </button>
           {Page === "Day 7" && (
-            <div>
+            <div className="outsite">
               <p>
                 Problem Link :{" "}
                 <a

@@ -9,6 +9,7 @@ import ProblemSolving3 from "../components/Challenge-components/ProblemSolving3"
 import ProblemSolving7 from "../components/Challenge-components/ProblemSolving7";
 import ProblemSolving15 from "../components/Challenge-components/ProblemSolving15";
 import ProblemSolving30 from "../components/Challenge-components/ProblemSolving30";
+import AlgorithmChallenge3 from "../components/Challenge-components/AlgorithmChallenge3";
 
 const Challenges = () => {
   const [Page, setPage] = useState("3 days Problem Solving");
@@ -123,6 +124,7 @@ const Challenges = () => {
               {Page === "7 days Problem Solving" && <ProblemSolving7 />}
               {Page === "15 days Problem Solving" && <ProblemSolving15 />}
               {Page === "30 days Problem Solving" && <ProblemSolving30 />}
+              {Page === "3 days Basic Algorithm" && <AlgorithmChallenge3 />}
             </div>
             <div className="ad"></div>
           </div>

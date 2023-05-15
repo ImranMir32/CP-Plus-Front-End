@@ -20,7 +20,7 @@ const ProblemSolving3 = () => {
             Day 1
           </button>
           {Page === "Day 1" && (
-            <div>
+            <div className="outsite">
               <p>
                 Problem Link :{" "}
                 <a
@@ -83,7 +83,7 @@ const ProblemSolving3 = () => {
             Day 2
           </button>
           {Page === "Day 2" && (
-            <div>
+            <div className="outsite">
               <p>
                 Problem Link :{" "}
                 <a
@@ -146,7 +146,7 @@ const ProblemSolving3 = () => {
             Day 3
           </button>
           {Page === "Day 3" && (
-            <div>
+            <div className="outsite">
               <p>
                 Problem Link :{" "}
                 <a

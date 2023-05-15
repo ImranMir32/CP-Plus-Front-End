@@ -1,18 +1,33 @@
+.details p {
+  margin-top: 2rem;
+  margin-bottom: 0.4rem;
+}
+ul li {
+  padding-top: 0.6rem;
+  margin-left: 2rem;
+}
+
 .details h3 {
   margin-top: 2rem;
 }
 
-.details p {
+.outsite {
+  display: flex;
+  flex-direction: column;
+}
+
+.outsite p {
   margin-top: 1rem;
   margin-bottom: 0.4rem;
   font-weight: bold;
 }
 
-.details a {
+.outsite a {
   margin-top: 0.5rem;
   font-weight: bold;
   text-decoration: underline;
 }
+
 .details button {
   background-color: #4299e1;
   height: 3rem;
