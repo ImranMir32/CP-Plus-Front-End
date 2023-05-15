@@ -7,7 +7,7 @@ import SigninForm from "./routes/SigninForm";
 import SignupForm from "./routes/SignupForm";
 import TermsPrivacy from "./routes/Terms-Privacy";
 import ContactUs from "./routes/ContactUs";
-import Challenge from "./routes/Challenge";
+import Challenges from "./routes/Challenges";
 
 const router = createBrowserRouter([
   {
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/challenge",
-    element: <Challenge />,
+    element: <Challenges />,
     errorElement: <ErrorPage />,
   },
   {
