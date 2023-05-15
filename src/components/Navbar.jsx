@@ -40,7 +40,7 @@ const navbar = () => {
           </a>
         </li> */}
         <li>
-          <a href="index.html" class="brand">
+          <a href="/contact-us" class="brand">
             Contact Us
           </a>
         </li>

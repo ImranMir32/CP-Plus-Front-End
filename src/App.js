@@ -6,6 +6,7 @@ import CpGuide from "./routes/CP-Guide";
 import SigninForm from "./routes/SigninForm";
 import SignupForm from "./routes/SignupForm";
 import TermsPrivacy from "./routes/Terms-Privacy";
+import ContactUs from "./routes/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
   {
     path: "/cpguide",
     element: <CpGuide />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/contact-us",
+    element: <ContactUs />,
     errorElement: <ErrorPage />,
   },
   {

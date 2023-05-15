@@ -28,6 +28,16 @@ export const signUpSchema = yup.object().shape({
     .required("Required"),
 });
 
+export const contactUsSchema = yup.object().shape({
+  name: yup.string().min(4).required(),
+  email: yup.string().email("Please enter a valid email").required("Required"),
+  phone: yup
+    .string()
+    .matches(phoneBd, { message: "Enter a valid phone number" })
+    .required("Required"),
+  // message: yup.string().min(5).required(),
+});
+
 export const signInSchema = yup.object().shape({
   email: yup.string().email("Please enter a valid email").required("Required"),
   password: yup.string().required("Required"),
