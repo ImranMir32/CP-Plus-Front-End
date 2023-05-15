@@ -7,6 +7,8 @@ import "../styles/challenge-style/cp.css";
 // importing Challenge component
 import ProblemSolving3 from "../components/Challenge-components/ProblemSolving3";
 import ProblemSolving7 from "../components/Challenge-components/ProblemSolving7";
+import ProblemSolving15 from "../components/Challenge-components/ProblemSolving15";
+import ProblemSolving30 from "../components/Challenge-components/ProblemSolving30";
 
 const Challenges = () => {
   const [Page, setPage] = useState("3 days Problem Solving");
@@ -119,20 +121,8 @@ const Challenges = () => {
               <h1>{Page}</h1>
               {Page === "3 days Problem Solving" && <ProblemSolving3 />}
               {Page === "7 days Problem Solving" && <ProblemSolving7 />}
-              {/* {Page === "Data Types and Variables" && <DataTypes />}
-              {Page === "Operators and Expressions" && <OperatorsExpressions />}
-              {Page === "If Else" && <IfElse />}
-              {Page === "Input/Output" && <InputOutput />}
-              {Page === "Loops" && <LoopInfo />}
-              {Page === "Array" && <ArrayInfo />}
-              {Page === "String" && <StringInfo />}
-              {Page === "Function" && <FunctionInfo />}
-              {Page === "Recursion" && <RecursionInfo />}
-              {Page === "Time complexity and Big O notation" && (
-                <TimeComplexity />
-              )}
-              {Page === "Bit manipulation" && <BitManipulation />}
-            </div> */}
+              {Page === "15 days Problem Solving" && <ProblemSolving15 />}
+              {Page === "30 days Problem Solving" && <ProblemSolving30 />}
             </div>
             <div className="ad"></div>
           </div>
