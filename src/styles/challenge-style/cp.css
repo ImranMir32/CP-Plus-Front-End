@@ -1,0 +1,61 @@
+.cp-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 6rem;
+  margin-left: 3rem;
+}
+
+/* cp topic box */
+.cp-topic-name {
+  width: 12rem;
+  height: 100%;
+}
+.cp-p {
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 5px;
+}
+.cp-p:hover {
+  background-color: rgb(183, 226, 236);
+}
+.cp-p-active {
+  background-color: rgb(19, 181, 221);
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.scrollable-section {
+  height: 33rem;
+  overflow-y: scroll;
+}
+
+/* vertical line */
+.vertical-line {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  width: 2px;
+  height: 34rem;
+  background-color: rgb(19, 181, 221);
+}
+
+.cp-topic-and-ad {
+  display: flex;
+  flex-direction: row;
+}
+
+/* cp details box */
+.cp-topic-details {
+  width: 52rem;
+  height: 100%;
+}
+
+.cp-content {
+  margin-bottom: 0.5rem;
+}
+
+.ad {
+  width: 10rem;
+  height: 100%;
+  /* background-color: red; */
+}
