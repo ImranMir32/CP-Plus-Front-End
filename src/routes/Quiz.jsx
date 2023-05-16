@@ -5,6 +5,7 @@ import "../styles/style.css";
 import "../styles/cp-style/cp.css";
 
 // importing cp-guide component
+import ArrayQuiz from "../components/Quiz-components/ArrayQuiz";
 
 const Quiz = () => {
   const [Page, setPage] = useState("Quiz on Array");
@@ -163,6 +164,7 @@ const Quiz = () => {
           <div className="cp-topic-and-ad">
             <div className="cp-topic-details">
               <h1>{Page}</h1>
+              {Page === "Quiz on Array" && <ArrayQuiz />}
             </div>
             <div className="ad"></div>
           </div>
