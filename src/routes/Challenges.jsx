@@ -10,6 +10,9 @@ import ProblemSolving7 from "../components/Challenge-components/ProblemSolving7"
 import ProblemSolving15 from "../components/Challenge-components/ProblemSolving15";
 import ProblemSolving30 from "../components/Challenge-components/ProblemSolving30";
 import AlgorithmChallenge3 from "../components/Challenge-components/AlgorithmChallenge3";
+import AlgorithmChallenge7 from "../components/Challenge-components/AlgorithmChallenge7";
+import AlgorithmChallenge15 from "../components/Challenge-components/AlgorithmChallenge15";
+import AlgorithmChallenge30 from "../components/Challenge-components/AlgorithmChallenge30";
 
 const Challenges = () => {
   const [Page, setPage] = useState("3 days Problem Solving");
@@ -93,10 +96,12 @@ const Challenges = () => {
 
               <p
                 onClick={() => {
-                  handleButtonClick("15 days Algorithm");
+                  handleButtonClick("15 days Math and String Algorithm");
                 }}
                 className={
-                  Page === "15 days Algorithm" ? "cp-p-active" : "cp-p"
+                  Page === "15 days Math and String Algorithm"
+                    ? "cp-p-active"
+                    : "cp-p"
                 }
               >
                 15 days Math and String Algorithm
@@ -125,6 +130,11 @@ const Challenges = () => {
               {Page === "15 days Problem Solving" && <ProblemSolving15 />}
               {Page === "30 days Problem Solving" && <ProblemSolving30 />}
               {Page === "3 days Basic Algorithm" && <AlgorithmChallenge3 />}
+              {Page === "7 days Math Algorithm" && <AlgorithmChallenge7 />}
+              {Page === "15 days Math and String Algorithm" && (
+                <AlgorithmChallenge15 />
+              )}
+              {Page === "30 days DSA Algorithm" && <AlgorithmChallenge30 />}
             </div>
             <div className="ad"></div>
           </div>

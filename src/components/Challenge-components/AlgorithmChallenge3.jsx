@@ -294,56 +294,139 @@ const AlgorithmChallenge3 = () => {
           </button>
           {Page === "Day 3" && (
             <div>
-              <p className="non-text">
-                Problem Link :{" "}
+              <h3>Hashing :</h3>
+              <p>
+                Hashing is a technique used to quickly locate data within a
+                collection, such as an array or a hash table, based on a key or
+                search value. It involves applying a hash function to the key,
+                which converts it into an index or location within the data
+                structure.
+              </p>
+              <p>Here's a brief explanation of how hashing works:</p>
+
+              <ul>
+                <li>
+                  Hash Function: A hash function takes an input (the key) and
+                  computes a numerical value (the hash code or hash value). The
+                  hash function should generate a unique hash value for each
+                  unique key, but collisions (different keys producing the same
+                  hash value) are possible.
+                </li>
+                <li>
+                  Hash Table: A hash table is a data structure that uses an
+                  array to store key-value pairs. The array is typically larger
+                  than the number of elements to be stored, allowing for
+                  efficient storage and retrieval. Each element in the array is
+                  called a bucket or slot.
+                </li>
+                <li>
+                  Mapping: The hash code is used to map the key to a specific
+                  index or bucket in the array. The hash code is often reduced
+                  to fit within the array size using a technique called modulo
+                  arithmetic. For example, if the array has 10 slots, the hash
+                  code might be reduced to a value between 0 and 9.
+                </li>
+                <li>
+                  Handling Collisions: Since multiple keys can produce the same
+                  hash value (collisions), collision resolution techniques are
+                  employed to handle these cases. Common techniques include
+                  separate chaining (each slot contains a linked list of
+                  key-value pairs) or open addressing (finding an alternative
+                  slot if a collision occurs).
+                </li>
+                <li>
+                  Retrieval: When searching for a key, the hash function is
+                  applied to compute the hash code, and the resulting index is
+                  checked. If the key is found at that index, the corresponding
+                  value can be retrieved. In case of collisions, the appropriate
+                  collision resolution method is used to locate the desired
+                  key-value pair.
+                </li>
+              </ul>
+
+              <p>
+                Hashing provides efficient search and retrieval operations when
+                the keys are well-distributed and collisions are minimized. It
+                is widely used in data structures like dictionaries, databases,
+                caches, and cryptographic systems. Hashing allows for
+                constant-time average case complexity for searching, making it a
+                valuable technique for fast data access.
+              </p>
+
+              <h3>To know more you can visit following sites :</h3>
+              <div className="outsite">
+                <p>Blog Links :</p>
                 <a
-                  href="https://codeforces.com/problemset/problem/1426/A"
+                  href="https://www.programiz.com/dsa/binary-search"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  https://codeforces.com/problemset/problem/1426/A
+                  https://www.programiz.com/dsa/binary-search
                 </a>
-              </p>
-              <p className="non-text">
-                Problem Link :{" "}
                 <a
-                  href="https://codeforces.com/problemset/problem/1426/A"
+                  href="https://www.geeksforgeeks.org/binary-search/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  https://codeforces.com/problemset/problem/1426/A
+                  https://www.geeksforgeeks.org/binary-search/
                 </a>
-              </p>
-              <p className="non-text">
-                Problem Link :{" "}
+
+                <p>Video Links :</p>
                 <a
-                  href="https://codeforces.com/problemset/problem/1426/A"
+                  href="https://www.youtube.com/watch?v=13ocRMSJy5M"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  https://codeforces.com/problemset/problem/1426/A
+                  https://www.youtube.com/watch?v=13ocRMSJy5M
                 </a>
-              </p>
-              <p className="non-text">
-                Problem Link :{" "}
                 <a
-                  href="https://codeforces.com/problemset/problem/1426/A"
+                  href="https://www.youtube.com/watch?v=ApvI7QUqGzI"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  https://codeforces.com/problemset/problem/1426/A
+                  https://www.youtube.com/watch?v=ApvI7QUqGzI
                 </a>
-              </p>
-              <p className="non-text">
-                Problem Link :{" "}
-                <a
-                  href="https://codeforces.com/problemset/problem/1426/A"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  https://codeforces.com/problemset/problem/1426/A
-                </a>
-              </p>
+
+                <p>Problem and Solution Links :</p>
+                <ul>
+                  <li>
+                    <p>
+                      Problem Link :{" "}
+                      <a
+                        href="https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/adjacent-sum-greater-than-k-f41e3ec4/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/adjacent-sum-greater-than-k-f41e3ec4/
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Problem Link :{" "}
+                      <a
+                        href="https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/adjacent-sum-greater-than-k-f41e3ec4/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/adjacent-sum-greater-than-k-f41e3ec4/
+                      </a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Problem Link :{" "}
+                      <a
+                        href="https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/adjacent-sum-greater-than-k-f41e3ec4/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/adjacent-sum-greater-than-k-f41e3ec4/
+                      </a>
+                    </p>
+                  </li>
+                </ul>
+              </div>
             </div>
           )}
         </div>
