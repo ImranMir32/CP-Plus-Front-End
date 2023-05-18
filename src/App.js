@@ -9,6 +9,7 @@ import TermsPrivacy from "./routes/Terms-Privacy";
 import ContactUs from "./routes/ContactUs";
 import Challenges from "./routes/Challenges";
 import Quiz from "./routes/Quiz";
+import AboutUs from "./routes/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
   {
     path: "/quiz",
     element: <Quiz />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/about-us",
+    element: <AboutUs />,
     errorElement: <ErrorPage />,
   },
   {

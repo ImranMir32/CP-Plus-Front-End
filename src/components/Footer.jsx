@@ -36,10 +36,10 @@ const Footer = () => {
           </div>
 
           <div className="box-2">
-            <Link to="/" class="brand">
+            <Link to="/about-us" class="brand">
               <h3 className="footer-text">About Us</h3>
             </Link>
-            <Link to="/" class="brand">
+            <Link to="/contact-us" class="brand">
               <h3 className="footer-text">Contact Us</h3>
             </Link>
             <Link to="/term&privacy" class="brand">
