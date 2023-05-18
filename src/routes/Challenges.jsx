@@ -71,7 +71,7 @@ const Challenges = () => {
                 30 days Problem Solving
               </p>
 
-              <h3>Leran Algorithm Challenge</h3>
+              <h3>Learn Algorithm Challenge</h3>
               <p
                 onClick={() => {
                   handleButtonClick("3 days Basic Algorithm");

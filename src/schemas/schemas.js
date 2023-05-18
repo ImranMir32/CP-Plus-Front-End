@@ -7,9 +7,9 @@ const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
 const phoneBd = /^(?:\+88|88)?(01[3-9]\d{8})$/;
 
 export const signUpSchema = yup.object().shape({
-  name: yup.string().min(4).required(),
+  name: yup.string().min(4).required("Name is a required field"),
   email: yup.string().email("Please enter a valid email").required("Required"),
-  hackerrankId: yup.string().required(),
+  hackerrankId: yup.string().required("HackerrankId is a required field"),
   phone: yup
     .string()
     .matches(phoneBd, { message: "Enter a valid phone number" })
@@ -29,13 +29,13 @@ export const signUpSchema = yup.object().shape({
 });
 
 export const contactUsSchema = yup.object().shape({
-  name: yup.string().min(4).required(),
+  name: yup.string().min(4).required("Name is a required field"),
   email: yup.string().email("Please enter a valid email").required("Required"),
   phone: yup
     .string()
     .matches(phoneBd, { message: "Enter a valid phone number" })
     .required("Required"),
-  message: yup.string().min(5).required(),
+  message: yup.string().min(5).required("Message is a required field"),
 });
 
 export const signInSchema = yup.object().shape({

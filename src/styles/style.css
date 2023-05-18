@@ -1,6 +1,7 @@
 .error {
-  color: #fc8181;
+  color: #f12a2a;
   font-size: 0.75rem;
+  font-weight: bold;
   text-align: left;
   margin-top: 0.25rem;
 }
