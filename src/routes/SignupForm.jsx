@@ -24,10 +24,10 @@ const onSubmit = async (values, actions) => {
     },
   });
   result = await result.json();
-  // console.log("result--> ", result.newUser);
+  console.log("result--> ", result);
   actions.resetForm();
 
-  if (result.newUser) {
+  if (result) {
     toast.success("Account has been created !", {
       position: toast.POSITION.TOP_RIGHT,
     });
