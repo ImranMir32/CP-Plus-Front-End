@@ -1,0 +1,82 @@
+.user_profile_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  width: 1200px;
+  height: 500px;
+  border: 1px solid rgb(19, 181, 221);
+}
+
+.user_profile_box_2 {
+  margin: 2.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2.7rem;
+  width: 400px;
+  height: 420px;
+  border: 1px solid rgb(19, 181, 221);
+}
+
+.profile-image-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.profile-image {
+  margin-top: 1rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-upload {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 1rem;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(116, 10, 10);
+  border: 1px solid rgb(19, 181, 221);
+}
+
+h1 {
+  padding-top: 0.5rem;
+}
+
+.user_profile_box_3 {
+  margin: 2.3rem;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 420px;
+  border: 1px solid rgb(19, 181, 221);
+}
+
+.user_profile_box_3_info {
+  margin-top: 4rem;
+  margin-left: 4rem;
+}
+.user_profile_box_3_info p {
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  font-size: large;
+}
+
+.user_profile_button_div {
+  display: flex;
+  flex-direction: row;
+}
+
+.user_profile_button {
+  margin-left: 7rem;
+  width: 7rem;
+}

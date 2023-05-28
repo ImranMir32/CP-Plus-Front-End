@@ -331,3 +331,16 @@ h4 {
     grid-template-columns: 1fr;
   }
 }
+
+.user-profile {
+  display: flex;
+  flex-direction: row;
+}
+
+.user-profile-logo p {
+  /* margin-right: 0.5rem; */
+  font-weight: bold;
+  font-size: larger;
+  padding-top: 0.2rem;
+  color: var(--successGreen);
+}

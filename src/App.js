@@ -10,6 +10,7 @@ import ContactUs from "./routes/ContactUs";
 import Challenges from "./routes/Challenges";
 import Quiz from "./routes/Quiz";
 import AboutUs from "./routes/AboutUs";
+import UserProfile from "./routes/UserProfile";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignupForm />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/user-profile",
+    element: <UserProfile />,
     errorElement: <ErrorPage />,
   },
   {
