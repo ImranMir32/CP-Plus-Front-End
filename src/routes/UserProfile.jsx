@@ -54,10 +54,10 @@ const UserProfile = () => {
               </div>
               <div className="user_profile_button_div">
                 <div className="user_profile_button">
-                  <button>Update Info</button>
+                  <button className="buttonD">Update Info</button>
                 </div>
                 <div className="user_profile_button">
-                  <button>Reset Password</button>
+                  <button className="buttonD">Reset Password</button>
                 </div>
               </div>
             </div>
