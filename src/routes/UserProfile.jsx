@@ -2,17 +2,16 @@ import React, { useEffect, useState } from "react";
 import "../styles/style.css";
 import "../styles/userProfile.css";
 
-// import olin from "../assets/olin.jpeg";
-import imran from "../assets/imran.jpg";
+import olin from "../assets/olin.jpeg";
 import Navbar from "../components/Navbar";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 
 // import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const UserProfile = () => {
-  const [imageURL, setImageURL] = useState(imran);
+  const [imageURL, setImageURL] = useState(olin);
   useEffect(() => {
     window.scrollTo(0, 0); // scroll to the top of the page
   }, []);
@@ -33,7 +32,7 @@ const UserProfile = () => {
         <div class="container">
           <div class="user_profile_box">
             <div className="user_profile_box_2">
-              <h1>Imran</h1>
+              <h1>Olin</h1>
               <div className="profile-image-container">
                 <img className="profile-image" src={imageURL} alt="Profile" />
                 <input
@@ -57,7 +56,10 @@ const UserProfile = () => {
                   <button className="buttonD">Update Info</button>
                 </div>
                 <div className="user_profile_button">
-                  <button className="buttonD">Reset Password</button>
+                  <Link to="/reset-password">
+                    {" "}
+                    <button className="buttonD">Reset Password</button>
+                  </Link>
                 </div>
               </div>
             </div>

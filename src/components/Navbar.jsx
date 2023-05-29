@@ -5,7 +5,7 @@ import imgLogo from "../assets/cp++1.png";
 import { Link } from "react-router-dom";
 import { AiOutlineLogout } from "react-icons/ai";
 
-const navbar = () => {
+const Navbar = () => {
   return (
     <nav class="nav">
       <ul>
@@ -54,7 +54,7 @@ const navbar = () => {
             </span>
           </div>
           <div className="user-profile-logo">
-            <p>Imran</p>
+            <p>Olin</p>
           </div>
         </Link>
 
@@ -68,4 +68,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;

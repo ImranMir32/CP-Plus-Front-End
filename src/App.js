@@ -11,6 +11,7 @@ import Challenges from "./routes/Challenges";
 import Quiz from "./routes/Quiz";
 import AboutUs from "./routes/AboutUs";
 import UserProfile from "./routes/UserProfile";
+import ResetPassword from "./components/UserProfile-Components/ResetPassword";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,11 @@ const router = createBrowserRouter([
   {
     path: "/term&privacy",
     element: <TermsPrivacy />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/reset-password",
+    element: <ResetPassword />,
     errorElement: <ErrorPage />,
   },
 ]);
