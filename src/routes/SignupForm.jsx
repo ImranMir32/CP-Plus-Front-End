@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/style.css";
 import { useFormik } from "formik";
 import { signUpSchema } from "../schemas/schemas";
@@ -10,41 +10,37 @@ import Footer from "../components/Footer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import { useDispatch, useSelector } from "react-redux";
+import { signUp } from "../Redux/Slice/globalSlice";
+
 const onSubmit = async (values, actions) => {
-  console.log(values);
-  console.log(actions);
-  console.log("ok");
-  console.log(JSON.stringify(values));
-
-  let result = await fetch("http://localhost:4000/api/users/signin", {
-    method: "POST",
-    body: JSON.stringify(values),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  result = await result.json();
-  console.log("result--> ", result);
   actions.resetForm();
-
-  if (result) {
-    toast.success("Account has been created !", {
-      position: toast.POSITION.TOP_RIGHT,
-    });
-    setTimeout(() => {
-      window.location.href = "/signin";
-    }, 2000);
-  } else {
-    toast.warning("Email is already used try another email !", {
-      position: toast.POSITION.TOP_RIGHT,
-    });
-  }
 };
 
 const SignupForm = () => {
   useEffect(() => {
     window.scrollTo(0, 0); // scroll to the top of the page
   }, []);
+  const [check, setCheck] = useState(false);
+  const { accountCreated } = useSelector((state) => state.global);
+
+  useEffect(() => {
+    if (accountCreated && check) {
+      toast.success("Account has been created !", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      setTimeout(() => {
+        window.location.href = "/signin";
+      }, 2000);
+    } else if (check) {
+      toast.warning("Email is already used try another email !", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      setCheck(false);
+    }
+  }, [accountCreated, check]);
+  const dispatch = useDispatch();
+
   const {
     values,
     errors,
@@ -179,7 +175,15 @@ const SignupForm = () => {
               )}
 
               {/* button */}
-              <button disabled={isSubmitting} type="submit" class="button">
+              <button
+                disabled={isSubmitting}
+                onClick={async () => {
+                  await dispatch(signUp(values));
+                  setCheck(true);
+                }}
+                type="submit"
+                class="button"
+              >
                 Submit
               </button>
               <ToastContainer />
