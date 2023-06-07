@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/style.css";
 import { useFormik } from "formik";
 import { signInSchema } from "../schemas/schemas";
@@ -9,35 +9,37 @@ import Footer from "../components/Footer";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { signIn } from "../Redux/Slice/globalSlice";
 
-const onSubmit = async (values, actions) => {
-  console.log(values);
-  console.log(actions);
-  console.log("ok");
-  console.log(JSON.stringify(values));
-
-  let result = await fetch("http://localhost:4000/api/users/login", {
-    method: "POST",
-    body: JSON.stringify(values),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  result = await result.json();
-  console.log(result);
-  actions.resetForm();
-  if (result.access_token) window.location.href = "/";
-  else {
-    toast.error("Wrong email or password !", {
-      position: toast.POSITION.TOP_RIGHT,
-    });
-  }
-};
+import { useDispatch, useSelector } from "react-redux";
 
 const SigninForm = () => {
   useEffect(() => {
     window.scrollTo(0, 0); // scroll to the top of the page
   }, []);
+
+  const [check, setCheck] = useState(false);
+  const { token } = useSelector((state) => state.global);
+  console.log(token);
+
+  useEffect(() => {
+    if (token && check) {
+      setCheck(false);
+      window.location.href = "/";
+    } else if (check) {
+      toast.error("Wrong email or password !", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      setCheck(false);
+    }
+  }, [token, check]);
+  const dispatch = useDispatch();
+
+  const onSubmit = (values, actions) => {
+    actions.resetForm();
+    setCheck(true);
+  };
+
   const {
     values,
     errors,
@@ -97,7 +99,14 @@ const SigninForm = () => {
               {errors.password && touched.password && (
                 <p className="error">{errors.password}</p>
               )}
-              <button disabled={isSubmitting} type="submit" class="button">
+              <button
+                onClick={async () => {
+                  await dispatch(signIn(values));
+                }}
+                disabled={isSubmitting}
+                type="submit"
+                class="button"
+              >
                 Submit
               </button>
               <ToastContainer />

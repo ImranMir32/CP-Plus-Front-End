@@ -13,10 +13,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { useDispatch, useSelector } from "react-redux";
 import { signUp } from "../Redux/Slice/globalSlice";
 
-const onSubmit = async (values, actions) => {
-  actions.resetForm();
-};
-
 const SignupForm = () => {
   useEffect(() => {
     window.scrollTo(0, 0); // scroll to the top of the page
@@ -40,6 +36,11 @@ const SignupForm = () => {
     }
   }, [accountCreated, check]);
   const dispatch = useDispatch();
+
+  const onSubmit = async (values, actions) => {
+    actions.resetForm();
+    setCheck(true);
+  };
 
   const {
     values,
@@ -179,7 +180,7 @@ const SignupForm = () => {
                 disabled={isSubmitting}
                 onClick={async () => {
                   await dispatch(signUp(values));
-                  setCheck(true);
+                  // setCheck(true);
                 }}
                 type="submit"
                 class="button"

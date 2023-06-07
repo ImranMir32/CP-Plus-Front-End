@@ -14,40 +14,24 @@ export const signUp = createAsyncThunk("global/signup", async (params) => {
     data: params,
   });
   return response.data;
-
-  //   let result = await fetch(, {
-  //     method: "POST",
-  //     body: JSON.stringify(params),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   });
-  //   result = await result.json();
-  //   return result;
 });
 
-// //login
-// export const signIn = createAsyncThunk("global/signIn", async (params) => {
-//   Keyboard.dismiss();
-//   console.log(params);
-//   const apiSubDirectory = "login";
-//   const apiDirectory = "public";
-//   const url = `${BASE_URL}/${apiDirectory}/${apiSubDirectory}/`;
-//   const response = await axios({
-//     method: "POST",
-//     url,
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     data: {
-//       email: params.email,
-//       password: params.password,
-//     },
-//   });
-//   //console.log(response.data.user.name);
-//   //console.log(response.data);
-//   return response.data;
-// });
+//login
+export const signIn = createAsyncThunk("global/signIn", async (params) => {
+  console.log(params);
+  const url = "http://localhost:4000/api/users/login";
+  const response = await axios({
+    method: "POST",
+    url,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: params,
+  });
+  //console.log(response.data.user.name);
+  console.log(response.data);
+  return response.data;
+});
 
 // //Add New Task
 // export const addNewTask = createAsyncThunk(
@@ -269,28 +253,28 @@ export const globalSlice = createSlice({
       state.isLoading = false;
       state.accountCreated = true;
       console.log("action--> ", action);
-      //   Alert.alert("Acount has been created sucessfully");
     });
     builder.addCase(signUp.rejected, (state, action) => {
       state.isLoading = false;
       console.log(action.error.message);
     });
 
-    //     //login
-    //     builder.addCase(signIn.pending, (state) => {
-    //       state.isLoading = true;
-    //     });
-    //     builder.addCase(signIn.fulfilled, (state, action) => {
-    //       state.isLoading = false;
-    //       state.userName = action.payload.user.name;
-    //       state.token = action.payload.token;
-    //       //  console.log("token is --> :");
-    //       //  console.log(action.payload.token);
-    //     });
-    //     builder.addCase(signIn.rejected, (state, action) => {
-    //       state.isLoading = false;
-    //       console.log(action.error.message);
-    //     });
+    //login
+    builder.addCase(signIn.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(signIn.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.token = action.payload.access_token;
+      //   state.user = action.payload.user;
+      state.userName = action.payload.user.name;
+      //   console.log("token is --> :");
+      //   console.log(action.payload.user.name);
+    });
+    builder.addCase(signIn.rejected, (state, action) => {
+      state.isLoading = false;
+      console.log(action.error.message);
+    });
 
     //     //addNewTask
     //     builder.addCase(addNewTask.pending, (state) => {
@@ -413,6 +397,7 @@ export const {
   accountCreated,
   clearData,
   clear,
+  token,
   //   checkDescription,
   setUserName,
 
