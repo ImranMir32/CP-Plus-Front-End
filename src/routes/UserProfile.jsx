@@ -49,11 +49,14 @@ const UserProfile = () => {
                 <p>Hackerrank Id : Olin32</p>
                 <p>Mobile number : 01912345678</p>
                 <p>Email : Olin32@gmail.com</p>
-                <p>Total Quiz Point : 0</p>
+                <p>Total Quiz Point : 4/5</p>
               </div>
               <div className="user_profile_button_div">
                 <div className="user_profile_button">
-                  <button className="buttonD">Update Info</button>
+                  <Link to="/update-profile">
+                    {" "}
+                    <button className="buttonD">Update Info</button>
+                  </Link>
                 </div>
                 <div className="user_profile_button">
                   <Link to="/reset-password">

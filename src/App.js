@@ -12,6 +12,7 @@ import Quiz from "./routes/Quiz";
 import AboutUs from "./routes/AboutUs";
 import UserProfile from "./routes/UserProfile";
 import ResetPassword from "./components/UserProfile-Components/ResetPassword";
+import UpdateProfile from "./components/UserProfile-Components/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,11 @@ const router = createBrowserRouter([
   {
     path: "/reset-password",
     element: <ResetPassword />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/update-profile",
+    element: <UpdateProfile />,
     errorElement: <ErrorPage />,
   },
 ]);
