@@ -5,7 +5,9 @@ import "material-icons/iconfont/material-icons.css";
 import imgLogo from "../assets/cp++1.png";
 import { Link } from "react-router-dom";
 import { AiOutlineLogout } from "react-icons/ai";
+import { RiLogoutCircleLine } from "react-icons/ri";
 import { GlobalStateContext } from "../Context/GlobalContext";
+import { GlobalMethodsContext } from "../Context/GlobalMethodsContext";
 
 const Navbar = () => {
   useEffect(() => {
@@ -13,6 +15,10 @@ const Navbar = () => {
   }, []);
 
   const { userName } = useContext(GlobalStateContext);
+  const { clearAllData } = useContext(GlobalMethodsContext);
+  const clear = () => {
+    clearAllData();
+  };
 
   return (
     <nav class="nav">
@@ -51,20 +57,32 @@ const Navbar = () => {
         </li>
       </ul>
       <div class="account">
-        <Link to="/user-profile" className="user-profile">
+        <Link
+          to={userName === "" ? "/signin" : "/user-profile"}
+          className="user-profile"
+        >
           <div className="user-profile-logo">
             <span class="material-icons-outlined" title="Account">
               account_circle
             </span>
           </div>
           <div className="user-profile-logo">
-            <p>x.{userName}</p>
+            <p>{userName}</p>
           </div>
         </Link>
 
         <Link to="/signin">
           {/* <h3>LogIn</h3> */}
-          <AiOutlineLogout size={25} />
+          {userName === "" ? (
+            <RiLogoutCircleLine size={25} />
+          ) : (
+            <AiOutlineLogout
+              size={25}
+              onClick={() => {
+                clear();
+              }}
+            />
+          )}
         </Link>
       </div>
     </nav>

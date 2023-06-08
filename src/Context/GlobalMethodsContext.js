@@ -42,10 +42,15 @@ const GlobalMethodsProvider = ({ children }) => {
       return 500;
     }
   };
+
+  const clearAllData = () => {
+    setUserName("");
+    setToken("");
+  };
   return (
     <GlobalMethodsContext.Provider
       value={{
-        // clearAllData,
+        clearAllData,
         SignIn,
         SignUp,
       }}
