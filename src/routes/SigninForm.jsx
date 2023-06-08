@@ -1,43 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import "../styles/style.css";
 import { useFormik } from "formik";
 import { signInSchema } from "../schemas/schemas";
 import imgLogin from "../assets/login.svg";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { signIn } from "../Redux/Slice/globalSlice";
-
-import { useDispatch, useSelector } from "react-redux";
+import { GlobalMethodsContext } from "../Context/GlobalMethodsContext";
+// import { GlobalStateContext } from "../Context/GlobalContext";
 
 const SigninForm = () => {
   useEffect(() => {
     window.scrollTo(0, 0); // scroll to the top of the page
   }, []);
 
-  const [check, setCheck] = useState(false);
-  const { token } = useSelector((state) => state.global);
-  console.log(token);
+  const navigate = useNavigate();
+  const { SignIn } = useContext(GlobalMethodsContext);
 
-  useEffect(() => {
-    if (token && check) {
-      setCheck(false);
-      window.location.href = "/";
-    } else if (check) {
+  const onSubmit = async (values, actions) => {
+    console.log("ok");
+    console.log(JSON.stringify(values));
+    const res = await SignIn(values);
+
+    console.log("resulr->", res);
+    actions.resetForm();
+    if (res === 200) {
+      navigate("/");
+    } else {
       toast.error("Wrong email or password !", {
         position: toast.POSITION.TOP_RIGHT,
       });
-      setCheck(false);
     }
-  }, [token, check]);
-  const dispatch = useDispatch();
-
-  const onSubmit = (values, actions) => {
-    actions.resetForm();
-    setCheck(true);
   };
 
   const {
@@ -100,9 +97,11 @@ const SigninForm = () => {
                 <p className="error">{errors.password}</p>
               )}
               <button
-                onClick={async () => {
-                  await dispatch(signIn(values));
-                }}
+                // onClick={async () => {
+                //   await dispatch(signIn(values));
+                //   // console.log("age");
+                //   // setCheck(true);
+                // }}
                 disabled={isSubmitting}
                 type="submit"
                 class="button"

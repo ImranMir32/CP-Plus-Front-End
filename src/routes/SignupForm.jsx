@@ -1,45 +1,42 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext } from "react";
 import "../styles/style.css";
 import { useFormik } from "formik";
 import { signUpSchema } from "../schemas/schemas";
 import imgSignUp from "../assets/signup.svg";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-import { useDispatch, useSelector } from "react-redux";
-import { signUp } from "../Redux/Slice/globalSlice";
+import { GlobalMethodsContext } from "../Context/GlobalMethodsContext";
 
 const SignupForm = () => {
   useEffect(() => {
     window.scrollTo(0, 0); // scroll to the top of the page
   }, []);
-  const [check, setCheck] = useState(false);
-  const { accountCreated } = useSelector((state) => state.global);
 
-  useEffect(() => {
-    if (accountCreated && check) {
+  const navigate = useNavigate();
+  const { SignUp } = useContext(GlobalMethodsContext);
+
+  const onSubmit = async (values, actions) => {
+    console.log("ok");
+    console.log(JSON.stringify(values));
+    const res = await SignUp(values);
+
+    if (res === 201) {
       toast.success("Account has been created !", {
         position: toast.POSITION.TOP_RIGHT,
       });
       setTimeout(() => {
-        window.location.href = "/signin";
+        navigate("/signin");
       }, 2000);
-    } else if (check) {
+    } else {
       toast.warning("Email is already used try another email !", {
         position: toast.POSITION.TOP_RIGHT,
       });
-      setCheck(false);
     }
-  }, [accountCreated, check]);
-  const dispatch = useDispatch();
-
-  const onSubmit = async (values, actions) => {
-    actions.resetForm();
-    setCheck(true);
   };
 
   const {
@@ -176,15 +173,7 @@ const SignupForm = () => {
               )}
 
               {/* button */}
-              <button
-                disabled={isSubmitting}
-                onClick={async () => {
-                  await dispatch(signUp(values));
-                  // setCheck(true);
-                }}
-                type="submit"
-                class="button"
-              >
+              <button disabled={isSubmitting} type="submit" class="button">
                 Submit
               </button>
               <ToastContainer />

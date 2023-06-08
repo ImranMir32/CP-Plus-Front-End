@@ -14,8 +14,8 @@ import UserProfile from "./routes/UserProfile";
 import ResetPassword from "./components/UserProfile-Components/ResetPassword";
 import UpdateProfile from "./components/UserProfile-Components/UpdateProfile";
 
-import store from "./Redux/Store/store";
-import { Provider } from "react-redux";
+import { GlobalStateProvider } from "./Context/GlobalContext";
+import { GlobalMethodsProvider } from "./Context/GlobalMethodsContext";
 
 const router = createBrowserRouter([
   {
@@ -82,9 +82,11 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
+    <GlobalStateProvider>
+      <GlobalMethodsProvider>
+        <RouterProvider router={router} />
+      </GlobalMethodsProvider>
+    </GlobalStateProvider>
   );
 }
 

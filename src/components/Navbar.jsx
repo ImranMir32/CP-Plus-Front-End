@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
+
 import "../styles/style.css";
 import "material-icons/iconfont/material-icons.css";
 import imgLogo from "../assets/cp++1.png";
 import { Link } from "react-router-dom";
 import { AiOutlineLogout } from "react-icons/ai";
+import { GlobalStateContext } from "../Context/GlobalContext";
 
 const Navbar = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); // scroll to the top of the page
+  }, []);
+
+  const { userName } = useContext(GlobalStateContext);
+
   return (
     <nav class="nav">
       <ul>
@@ -21,29 +29,25 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <a href="/challenge" class="brand">
+          <Link to="/challenge" class="brand">
             Challenge
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="index.html" class="brand">
+          <Link to="" class="brand">
             Contest
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/quiz" class="brand">
+          <Link to="/quiz" class="brand">
             Quiz
-          </a>
+          </Link>
         </li>
-        {/* <li>
-          <a href="index.html" class="brand">
-            Course
-          </a>
-        </li> */}
+
         <li>
-          <a href="/contact-us" class="brand">
+          <Link to="/contact-us" class="brand">
             Contact Us
-          </a>
+          </Link>
         </li>
       </ul>
       <div class="account">
@@ -54,7 +58,7 @@ const Navbar = () => {
             </span>
           </div>
           <div className="user-profile-logo">
-            <p>Olin</p>
+            <p>x.{userName}</p>
           </div>
         </Link>
 
@@ -62,7 +66,6 @@ const Navbar = () => {
           {/* <h3>LogIn</h3> */}
           <AiOutlineLogout size={25} />
         </Link>
-        {/* <!-- <span class="material-icons-outlined" title="Logout"> logout </span> --> */}
       </div>
     </nav>
   );
