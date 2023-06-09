@@ -10,6 +10,8 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
+    "emailjs": "^4.0.2",
+    "emailjs-com": "^3.2.0",
     "formik": "^2.2.9",
     "material-icons": "^1.13.3",
     "react": "^18.2.0",

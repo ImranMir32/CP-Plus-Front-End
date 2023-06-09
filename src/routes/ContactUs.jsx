@@ -1,70 +1,53 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "../styles/style.css";
 import "../styles/contactus.css";
-import { useFormik } from "formik";
-import { contactUsSchema } from "../schemas/schemas";
 
+// import emailjs from "@emailjs/browser";
+import emailjs from "emailjs-com";
 import Navbar from "../components/Navbar";
 
 import Footer from "../components/Footer";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Input } from "@material-ui/core";
 // import { Input } from "@material-ui/core";
-
-const onSubmit = async (values, actions) => {
-  console.log(values);
-  console.log(actions);
-  console.log("ok");
-  console.log(JSON.stringify(values));
-
-  //   let result = await fetch("http://localhost:4000/api/users/login", {
-  //     method: "POST",
-  //     body: JSON.stringify(values),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   });
-  //   result = await result.json();
-  //   console.log(result);
-  //   actions.resetForm();
-  //   if (result.access_token) window.location.href = "/";
-  //   else {
-  //     toast.error("Wrong email or password !", {
-  //       position: toast.POSITION.TOP_RIGHT,
-  //     });
-  //   }
-  actions.resetForm();
-  toast.success("Send Message!", {
-    position: toast.POSITION.TOP_RIGHT,
-  });
-};
+// import { Input } from "@material-ui/core";
 
 const ContactUs = () => {
   useEffect(() => {
     window.scrollTo(0, 0); // scroll to the top of the page
   }, []);
-  const {
-    values,
-    errors,
-    touched,
-    isSubmitting,
-    handleBlur,
-    handleChange,
-    handleSubmit,
-  } = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    },
-    validationSchema: contactUsSchema,
-    onSubmit,
-  });
 
-  console.log(errors);
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_n4ch7u1",
+        "template_6410oas",
+        form.current,
+        "p2m_dLhVVqi6U-zfq"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
+
+  const showToastMessage = () => {
+    toast.success("Successfully send !", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  };
+
+  // console.log(errors);
 
   return (
     <>
@@ -72,66 +55,59 @@ const ContactUs = () => {
       <div class="contact-container">
         <h1>Contact Us</h1>
         <div class="column">
-          <form class="login form" onSubmit={handleSubmit} autoComplete="off">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            autoComplete="off"
+            class="login form"
+          >
+            {/* <form  onSubmit={handleSubmit} > */}
             <label htmlFor="name">Name</label>
             <input
-              value={values.name}
-              onChange={handleChange}
+              // value={values.name}
+              // onChange={handleChange}
               id="name"
+              name="user_name"
               type="text"
               placeholder="Enter your name"
-              onBlur={handleBlur}
-              className={errors.name && touched.name ? "input-error" : ""}
+              // onBlur={handleBlur}
+              className=""
             />
-            {errors.name && touched.name && (
-              <p className="error">{errors.name}</p>
-            )}
+
             <label htmlFor="email">Email</label>
             <input
-              value={values.email}
-              onChange={handleChange}
+              // value={values.email}
+              // onChange={handleChange}
               id="email"
+              name="user_email"
               type="email"
               placeholder="Enter your email"
-              onBlur={handleBlur}
-              className={errors.email && touched.email ? "input-error" : ""}
+              // onBlur={handleBlur}
+              className=""
             />
-            {errors.email && touched.email && (
-              <p className="error">{errors.email}</p>
-            )}
-            {/* Mobile number */}
-            <label htmlFor="phone">Phone number</label>
-            <input
-              value={values.phone}
-              onChange={handleChange}
-              id="phone"
-              type="text"
-              placeholder="Enter your Mobile number"
-              onBlur={handleBlur}
-              className={errors.phone && touched.phone ? "input-error" : ""}
-            />
-            {errors.phone && touched.phone && (
-              <p className="error">{errors.phone}</p>
-            )}
 
             {/* text area */}
             <label htmlFor="message">Message</label>
-            <Input
-              value={values.message}
-              onChange={handleChange}
+            <textarea
               id="message"
+              name="message"
               type="textarea"
               placeholder="Type your message here..."
-              onBlur={handleBlur}
               className="message-input"
             />
-            {errors.message && touched.message && (
-              <p className="error">{errors.message}</p>
-            )}
 
-            <button disabled={isSubmitting} type="submit" class="button">
+            <button
+              type="submit"
+              value="Send"
+              onClick={showToastMessage}
+              class="button"
+            >
               Submit
             </button>
+
+            {/* <button disabled={isSubmitting} type="submit" >
+              Submit
+            </button> */}
             <ToastContainer />
           </form>
         </div>
