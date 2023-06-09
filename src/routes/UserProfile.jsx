@@ -3,7 +3,7 @@ import "../styles/style.css";
 import "../styles/userProfile.css";
 import axios from "axios";
 
-import olin from "../assets/olin.jpeg";
+import demo from "../assets/demo Image.jpg";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
@@ -15,12 +15,28 @@ import { GlobalStateContext } from "../Context/Global_Context";
 // import { GlobalMethodsContext } from "../Context/GlobalMethodsContext";
 
 const UserProfile = () => {
-  const [imageURL, setImageURL] = useState(olin);
+  const [imageURL, setImageURL] = useState(demo);
+  // const [data,setData]=useState(demo)
   useEffect(() => {
     window.scrollTo(0, 0); // scroll to the top of the page
   }, []);
-
   const { user } = useContext(GlobalStateContext);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:4000/api/image/${user.email}`)
+      .then((res) => {
+        console.log("data--->", res.data);
+        const base64String = btoa(
+          String.fromCharCode(...new Uint8Array(res.data.img.data.data))
+        );
+        console.log(res.data.img.data.data);
+
+        setImageURL(`data:image/png;base64,${base64String}`);
+      })
+      .catch((err) => console.log(err, "it has an error"));
+  }, [user.email]);
+
   // const { imgUpload } = useContext(GlobalMethodsContext);
 
   const handleImageUpload = async (event) => {
