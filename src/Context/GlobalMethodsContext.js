@@ -75,9 +75,28 @@ const GlobalMethodsProvider = ({ children }) => {
     }
   };
 
+  const resetPassword = async (values) => {
+    try {
+      const url = `http://localhost:4000/api/users/reset-password/${user.email}`;
+      const response = await axios({
+        method: "PUT",
+        url,
+        data: values,
+      });
+
+      console.log(response.data);
+      setUser(response.data);
+      return response.status;
+    } catch (error) {
+      console.log(error.message);
+      return 500;
+    }
+  };
+
   const clearAllData = () => {
     setUserName("");
     setToken("");
+    setUser("");
   };
   return (
     <GlobalMethodsContext.Provider
@@ -87,6 +106,7 @@ const GlobalMethodsProvider = ({ children }) => {
         SignUp,
         imgUpload,
         updateUser,
+        resetPassword,
       }}
     >
       {children}

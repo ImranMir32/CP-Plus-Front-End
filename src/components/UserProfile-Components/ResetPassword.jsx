@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import "../../styles/style.css";
 import { useFormik } from "formik";
-import { signInSchema } from "../../schemas/schemas";
+import { resetPasswordSchema } from "../../schemas/schemas";
 // import imgLogin from "../assets/login.svg";
 import Navbar from "../Navbar";
 import imgReset from "../../assets/reset.png";
@@ -10,36 +11,40 @@ import Footer from "../Footer";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-const onSubmit = async (values, actions) => {
-  console.log(values);
-  console.log(actions);
-  console.log("ok");
-  console.log(JSON.stringify(values));
-
-  let result = await fetch("http://localhost:4000/api/users/login", {
-    method: "POST",
-    body: JSON.stringify(values),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  result = await result.json();
-  console.log(result);
-  actions.resetForm();
-  if (result.access_token) window.location.href = "/";
-  else {
-    toast.error("Wrong email or password !", {
-      position: toast.POSITION.TOP_RIGHT,
-    });
-  }
-};
+// import { GlobalStateContext } from "../../Context/Global_Context";
+import { GlobalMethodsContext } from "../../Context/GlobalMethodsContext";
 
 const ResetPassword = () => {
-  //   const [resetPage, setResetPage] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0); // scroll to the top of the page
   }, []);
+  const navigate = useNavigate();
+  const { resetPassword } = useContext(GlobalMethodsContext);
+
+  const onSubmit = async (values, actions) => {
+    const res = await resetPassword(values);
+    if (res === 200) {
+      toast.success("Password reseted!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      setTimeout(() => {
+        navigate("/user-profile");
+      }, 2000);
+    } else {
+      toast.warning("Wrong Password !", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
+
+    // let result = await fetch("http://localhost:4000/api/users/login", {
+    //   method: "POST",
+    //   body: JSON.stringify(values),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
+  };
+
   const {
     values,
     errors,
@@ -54,7 +59,7 @@ const ResetPassword = () => {
       password: "",
       confirmPassword: "",
     },
-    validationSchema: signInSchema,
+    validationSchema: resetPasswordSchema,
     onSubmit,
   });
 
@@ -71,7 +76,7 @@ const ResetPassword = () => {
               <img src={imgReset} alt="Login" />
             </div>
             <form class="login form" onSubmit={handleSubmit} autoComplete="off">
-              <label htmlFor="email">Curren Password</label>
+              <label htmlFor="currentPasswoord">Current Password</label>
               <input
                 value={values.email}
                 onChange={handleChange}
@@ -90,7 +95,7 @@ const ResetPassword = () => {
               )}
 
               {/* passwword */}
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">New Password</label>
               <input
                 id="password"
                 type="password"
