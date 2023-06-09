@@ -5,7 +5,8 @@ import axios from "axios";
 const GlobalMethodsContext = createContext();
 
 const GlobalMethodsProvider = ({ children }) => {
-  const { setUserName, setToken, setUser } = useContext(GlobalStateContext);
+  const { user, setUserName, setToken, setUser } =
+    useContext(GlobalStateContext);
 
   const SignIn = async (values) => {
     try {
@@ -34,9 +35,7 @@ const GlobalMethodsProvider = ({ children }) => {
         url,
         data: values,
       });
-      //   console.log("name: ", response.data.access_token);
-      // setUserName(response.data.user.name);
-      // setToken(response.data.access_token);
+
       return response.status;
     } catch (error) {
       console.log(error.message);
@@ -58,6 +57,24 @@ const GlobalMethodsProvider = ({ children }) => {
     }
   };
 
+  const updateUser = async (values) => {
+    try {
+      const url = `http://localhost:4000/api/users/update/${user.email}`;
+      const response = await axios({
+        method: "PUT",
+        url,
+        data: values,
+      });
+
+      console.log(response.data);
+      setUser(response.data);
+      return response.status;
+    } catch (error) {
+      console.log(error.message);
+      return 500;
+    }
+  };
+
   const clearAllData = () => {
     setUserName("");
     setToken("");
@@ -69,6 +86,7 @@ const GlobalMethodsProvider = ({ children }) => {
         SignIn,
         SignUp,
         imgUpload,
+        updateUser,
       }}
     >
       {children}

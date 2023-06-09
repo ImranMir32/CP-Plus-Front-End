@@ -16,11 +16,14 @@ import { GlobalStateContext } from "../Context/Global_Context";
 
 const UserProfile = () => {
   const [imageURL, setImageURL] = useState(demo);
+  const { user } = useContext(GlobalStateContext);
   // const [data,setData]=useState(demo)
   useEffect(() => {
     window.scrollTo(0, 0); // scroll to the top of the page
   }, []);
-  const { user } = useContext(GlobalStateContext);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [user]);
 
   useEffect(() => {
     axios
@@ -127,6 +130,7 @@ const UserProfile = () => {
                     <button className="buttonD">Reset Password</button>
                   </Link>
                 </div>
+                {/* <ToastContainer /> */}
               </div>
             </div>
           </div>

@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import "../../styles/style.css";
 import { useFormik } from "formik";
-import { signUpSchema } from "../../schemas/schemas";
+import { updateUsSchema } from "../../schemas/schemas";
 import imgSignUp from "../../assets/signup.svg";
 import Navbar from "../Navbar";
 // import { Link } from "react-router-dom";
@@ -9,42 +10,39 @@ import Footer from "../Footer";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-const onSubmit = async (values, actions) => {
-  console.log(values);
-  console.log(actions);
-  console.log("ok");
-  console.log(JSON.stringify(values));
-
-  let result = await fetch("http://localhost:4000/api/users/signin", {
-    method: "POST",
-    body: JSON.stringify(values),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  result = await result.json();
-  console.log("result--> ", result);
-  actions.resetForm();
-
-  if (result) {
-    toast.success("Account has been created !", {
-      position: toast.POSITION.TOP_RIGHT,
-    });
-    setTimeout(() => {
-      window.location.href = "/signin";
-    }, 2000);
-  } else {
-    toast.warning("Email is already used try another email !", {
-      position: toast.POSITION.TOP_RIGHT,
-    });
-  }
-};
+import { GlobalStateContext } from "../../Context/Global_Context";
+import { GlobalMethodsContext } from "../../Context/GlobalMethodsContext";
 
 const UpdateProfile = () => {
+  const { user } = useContext(GlobalStateContext);
   useEffect(() => {
     window.scrollTo(0, 0); // scroll to the top of the page
   }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [user]);
+  const navigate = useNavigate();
+
+  const { updateUser } = useContext(GlobalMethodsContext);
+
+  const onSubmit = async (values, actions) => {
+    console.log("values-<", values);
+
+    const res = await updateUser(values);
+    if (res === 200) {
+      toast.success("Info Updated!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      setTimeout(() => {
+        navigate("/user-profile");
+      }, 2000);
+    } else {
+      toast.warning("Wrong Password !", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
+  };
+
   const {
     values,
     errors,
@@ -55,14 +53,12 @@ const UpdateProfile = () => {
     handleSubmit,
   } = useFormik({
     initialValues: {
-      name: "Olin Akon Chumky",
-      email: "Olin32@gmail.com",
-      hackerrankId: "Olin32",
-      phone: "01912345678",
+      name: `${user.name}`,
+      hackerrankId: `${user.hackerrankId}`,
+      phone: `${user.phone}`,
       password: "",
-      //   confirmPassword: "",
     },
-    validationSchema: signUpSchema,
+    validationSchema: updateUsSchema,
     onSubmit,
   });
 
@@ -91,21 +87,6 @@ const UpdateProfile = () => {
               />
               {errors.name && touched.name && (
                 <p className="error">{errors.name}</p>
-              )}
-
-              {/* email */}
-              <label htmlFor="email">Email</label>
-              <input
-                value={values.email}
-                onChange={handleChange}
-                id="email"
-                type="email"
-                placeholder="Enter your email"
-                onBlur={handleBlur}
-                className={errors.email && touched.email ? "input-error" : ""}
-              />
-              {errors.email && touched.email && (
-                <p className="error">{errors.email}</p>
               )}
 
               {/* hackerrankId */}
@@ -158,25 +139,6 @@ const UpdateProfile = () => {
               {errors.password && touched.password && (
                 <p className="error">{errors.password}</p>
               )}
-
-              {/* confirmPasswword
-              <label htmlFor="confirmPassword">Confirm Password</label>
-              <input
-                id="confirmPassword"
-                type="password"
-                placeholder="Confirm Password"
-                value={values.confirmPassword}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                className={
-                  errors.confirmPassword && touched.confirmPassword
-                    ? "input-error"
-                    : ""
-                }
-              />
-              {errors.confirmPassword && touched.confirmPassword && (
-                <p className="error">{errors.confirmPassword}</p>
-              )} */}
 
               {/* button */}
               <button disabled={isSubmitting} type="submit" class="button">

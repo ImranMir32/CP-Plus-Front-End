@@ -28,14 +28,14 @@ export const signUpSchema = yup.object().shape({
     .required("Required"),
 });
 
-export const contactUsSchema = yup.object().shape({
+export const updateUsSchema = yup.object().shape({
   name: yup.string().min(4).required("Name is a required field"),
-  email: yup.string().email("Please enter a valid email").required("Required"),
+  hackerrankId: yup.string().required("HackerrankId is a required field"),
   phone: yup
     .string()
     .matches(phoneBd, { message: "Enter a valid phone number" })
     .required("Required"),
-  message: yup.string().min(5).required("Message is a required field"),
+  password: yup.string().required("Required"),
 });
 
 export const signInSchema = yup.object().shape({
