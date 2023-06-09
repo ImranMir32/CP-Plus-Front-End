@@ -1,11 +1,11 @@
-import { GlobalStateContext } from "./GlobalContext";
+import { GlobalStateContext } from "./Global_Context";
 import React, { createContext, useContext } from "react";
 import axios from "axios";
 
 const GlobalMethodsContext = createContext();
 
 const GlobalMethodsProvider = ({ children }) => {
-  const { setUserName, setToken } = useContext(GlobalStateContext);
+  const { setUserName, setToken, setUser } = useContext(GlobalStateContext);
 
   const SignIn = async (values) => {
     try {
@@ -18,6 +18,7 @@ const GlobalMethodsProvider = ({ children }) => {
       //   console.log("name: ", response.data.access_token);
       setUserName(response.data.user.name);
       setToken(response.data.access_token);
+      setUser(response.data.user);
       return response.status;
     } catch (error) {
       console.log(error.message);
@@ -43,6 +44,20 @@ const GlobalMethodsProvider = ({ children }) => {
     }
   };
 
+  const imgUpload = async (values) => {
+    try {
+      await axios.post("http://localhost:4000/api/image/upload", values, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log("Image uploaded successfully");
+    } catch (error) {
+      console.log(error.message);
+      return 401;
+    }
+  };
+
   const clearAllData = () => {
     setUserName("");
     setToken("");
@@ -53,6 +68,7 @@ const GlobalMethodsProvider = ({ children }) => {
         clearAllData,
         SignIn,
         SignUp,
+        imgUpload,
       }}
     >
       {children}

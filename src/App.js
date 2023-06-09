@@ -14,7 +14,7 @@ import UserProfile from "./routes/UserProfile";
 import ResetPassword from "./components/UserProfile-Components/ResetPassword";
 import UpdateProfile from "./components/UserProfile-Components/UpdateProfile";
 
-import { GlobalStateProvider } from "./Context/GlobalContext";
+import { GlobalStateProvider } from "./Context/Global_Context";
 import { GlobalMethodsProvider } from "./Context/GlobalMethodsContext";
 
 const router = createBrowserRouter([

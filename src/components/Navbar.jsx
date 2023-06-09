@@ -6,7 +6,7 @@ import imgLogo from "../assets/cp++1.png";
 import { Link } from "react-router-dom";
 import { AiOutlineLogout } from "react-icons/ai";
 import { RiLogoutCircleLine } from "react-icons/ri";
-import { GlobalStateContext } from "../Context/GlobalContext";
+import { GlobalStateContext } from "../Context/Global_Context";
 import { GlobalMethodsContext } from "../Context/GlobalMethodsContext";
 
 const Navbar = () => {
