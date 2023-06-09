@@ -47,21 +47,38 @@ const UserProfile = () => {
     };
 
     // const selectedFile=event.target.value;
-    const email = user.email;
-    const formData = new FormData();
-    formData.append("testImage", file);
-    formData.append("email", email);
 
-    try {
-      const response = await axios.post(
-        "http://localhost:4000/api/image/upload",
-        formData
-      );
-      console.log(response.data);
-      // setUploadStatus("Image uploaded successfully");
-    } catch (error) {
-      console.error(error);
-      // setUploadStatus("Error uploading image");
+    if (imageURL === demo) {
+      const email = user.email;
+      const formData = new FormData();
+      formData.append("testImage", file);
+      formData.append("email", email);
+      try {
+        const response = await axios.post(
+          "http://localhost:4000/api/image/upload",
+          formData
+        );
+        console.log(response.data);
+        // setUploadStatus("Image uploaded successfully");
+      } catch (error) {
+        console.error(error);
+        // setUploadStatus("Error uploading image");
+      }
+    } else {
+      const email = user.email;
+      const formData = new FormData();
+      formData.append("testImage", file);
+      try {
+        const response = await axios.put(
+          `http://localhost:4000/api/image/${email}`,
+          formData
+        );
+        console.log(response.data);
+        // setUploadStatus("Image uploaded successfully");
+      } catch (error) {
+        console.error(error);
+        // setUploadStatus("Error uploading image");
+      }
     }
 
     reader.readAsDataURL(file);
