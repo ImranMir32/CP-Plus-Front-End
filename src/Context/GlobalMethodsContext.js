@@ -68,6 +68,7 @@ const GlobalMethodsProvider = ({ children }) => {
 
       console.log(response.data);
       setUser(response.data);
+      setUserName(response.data.name);
       return response.status;
     } catch (error) {
       console.log(error.message);

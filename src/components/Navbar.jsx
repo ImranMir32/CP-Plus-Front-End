@@ -10,12 +10,15 @@ import { GlobalStateContext } from "../Context/Global_Context";
 import { GlobalMethodsContext } from "../Context/GlobalMethodsContext";
 
 const Navbar = () => {
+  const { userName, user } = useContext(GlobalStateContext);
+  const { clearAllData } = useContext(GlobalMethodsContext);
   useEffect(() => {
     window.scrollTo(0, 0); // scroll to the top of the page
   }, []);
 
-  const { userName } = useContext(GlobalStateContext);
-  const { clearAllData } = useContext(GlobalMethodsContext);
+  useEffect(() => {
+    window.scrollTo(0, 0); // scroll to the top of the page
+  }, [user.name]);
   const clear = () => {
     clearAllData();
   };
