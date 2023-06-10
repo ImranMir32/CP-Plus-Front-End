@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "../../styles/quiz-style/quiz.css";
 import "../../styles/quiz-style/quizDetails.css";
+import { GlobalStateContext } from "../../Context/Global_Context";
+import { GlobalMethodsContext } from "../../Context/GlobalMethodsContext";
 
 const ArrayQuiz = () => {
   const [answers, setAnswers] = useState({});
@@ -8,6 +10,11 @@ const ArrayQuiz = () => {
   const [show, setShow] = useState(false);
   const [showResult, setShowResult] = useState(false);
   const [hideButton, sethideButton] = useState(false);
+  const { user } = useContext(GlobalStateContext);
+  const { updateScore } = useContext(GlobalMethodsContext);
+  useEffect(() => {
+    window.scrollTo(0, 0); // scroll to the top of the page
+  }, []);
 
   const questions = [
     {
@@ -79,7 +86,7 @@ const ArrayQuiz = () => {
     }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     let totalScore = 0;
     setShowResult(true);
     questions.forEach((question) => {
@@ -94,6 +101,14 @@ const ArrayQuiz = () => {
     });
 
     setScore(totalScore);
+    const earn_score = user.earn_score + totalScore;
+    const total_attempted_score = user.total_attempted_score + questions.length;
+
+    const values = {
+      earn_score,
+      total_attempted_score,
+    };
+    await updateScore(values);
     window.scrollTo(0, 0);
     // const section = document.getElementById("mySection");
     // section.scrollIntoView({ behavior: "smooth" });

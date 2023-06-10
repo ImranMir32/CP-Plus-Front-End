@@ -93,6 +93,24 @@ const GlobalMethodsProvider = ({ children }) => {
     }
   };
 
+  const updateScore = async (values) => {
+    try {
+      const url = `http://localhost:4000/api/users/update-score/${user.email}`;
+      const response = await axios({
+        method: "PUT",
+        url,
+        data: values,
+      });
+
+      console.log(response.data);
+      setUser(response.data);
+      return response.status;
+    } catch (error) {
+      console.log(error.message);
+      return 500;
+    }
+  };
+
   const clearAllData = () => {
     setUserName("");
     setToken("");
@@ -107,6 +125,7 @@ const GlobalMethodsProvider = ({ children }) => {
         imgUpload,
         updateUser,
         resetPassword,
+        updateScore,
       }}
     >
       {children}
