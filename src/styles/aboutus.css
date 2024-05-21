@@ -1,6 +1,6 @@
 .box-contact-us {
   padding-top: 8rem;
-  padding-left: 11rem;
+  padding-left: 25rem;
   padding-right: 7rem;
   display: flex;
   justify-content: flex-start;
@@ -11,7 +11,7 @@
   margin: 1rem;
   margin-left: 5rem;
   background-color: white;
-  height: 24rem;
+  height: 25rem;
   width: 24rem;
 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.6);

@@ -37,7 +37,7 @@ const UpdateProfile = () => {
         navigate("/user-profile");
       }, 2000);
     } else {
-      toast.warning("Wrong Password !", {
+      toast.error("Wrong Password !", {
         position: toast.POSITION.TOP_RIGHT,
       });
     }

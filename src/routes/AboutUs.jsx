@@ -3,7 +3,6 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import "../styles/aboutus.css";
 import imran from "../assets/imran.jpg";
-import olin from "../assets/olin.jpeg";
 
 const AboutUs = () => {
   useEffect(() => {
@@ -24,21 +23,8 @@ const AboutUs = () => {
             {/* <p>University of Information</p>
           <p>Technology and Sciences</p> */}
             <p>Dhaka, Bangladesh</p>
-            <p className="mail">Mail: 1944541035@uits.edu.bd</p>
-          </div>
-        </div>
-        <div className="box-content-contact-us">
-          <img src={olin} alt="olin" />
-          <div className="info">
-            <h3>Olin Akon Chumky</h3>
-            <p>
-              Department of CSE, University of Information Technology and
-              Sciences
-            </p>
-            {/* <p>University of Information</p>
-          <p>Technology and Sciences</p> */}
-            <p>Dhaka, Bangladesh</p>
-            <p className="mail">Mail: 1944541032@uits.edu.bd</p>
+            <p className="mail">Mail : imranmir6677@gmail.com</p>
+            <p>Phone : 01866078547</p>
           </div>
         </div>
       </div>
