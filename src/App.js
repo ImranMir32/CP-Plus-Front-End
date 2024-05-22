@@ -8,6 +8,7 @@ import SignupForm from "./routes/SignupForm";
 import TermsPrivacy from "./routes/Terms-Privacy";
 import ContactUs from "./routes/ContactUs";
 import Challenges from "./routes/Challenges";
+import Contest from "./routes/Contest";
 import Quiz from "./routes/Quiz";
 import AboutUs from "./routes/AboutUs";
 import UserProfile from "./routes/UserProfile";
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
   {
     path: "/cpguide",
     element: <CpGuide />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/contest",
+    element: <Contest />,
     errorElement: <ErrorPage />,
   },
   {

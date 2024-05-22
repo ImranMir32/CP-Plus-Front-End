@@ -43,7 +43,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="" class="brand">
+          <Link to="/contest" class="brand">
             Contest
           </Link>
         </li>

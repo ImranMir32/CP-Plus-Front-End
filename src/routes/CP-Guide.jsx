@@ -151,122 +151,15 @@ const CpGuide = () => {
 
               <div className="cp-content">
                 <h3>Searching and Sorting Algorithms</h3>
+                <p>Coming soon.....</p>
               </div>
               <div className="intermediate">
                 <h3>Intermediate section</h3>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
+                <p>Coming soon.....</p>
               </div>
               <div className="advanced">
                 <h3>Advanced section</h3>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-              </div>
-
-              <div className="cp-content">
-                <h3>Searching and Sorting Algorithms</h3>
-              </div>
-              <div className="intermediate">
-                <h3>Intermediate section</h3>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-              </div>
-              <div className="advanced">
-                <h3>Advanced section</h3>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-              </div>
-
-              <div className="cp-content">
-                <h3>Searching and Sorting Algorithms</h3>
-              </div>
-              <div className="intermediate">
-                <h3>Intermediate section</h3>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-              </div>
-              <div className="advanced">
-                <h3>Advanced section</h3>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-              </div>
-
-              <div className="cp-content">
-                <h3>Searching and Sorting Algorithms</h3>
-              </div>
-              <div className="intermediate">
-                <h3>Intermediate section</h3>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-              </div>
-              <div className="advanced">
-                <h3>Advanced section</h3>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
-                <p>contant onk import</p>
+                <p>Coming soon.....</p>
               </div>
             </div>
           </div>

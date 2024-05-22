@@ -156,6 +156,8 @@ const Quiz = () => {
               >
                 Geometry Algorithms
               </p>
+
+              <p>Coming soon.....</p>
             </div>
           </div>
         </div>
