@@ -132,6 +132,7 @@ const UserProfile = () => {
                 </div>
                 {/* <ToastContainer /> */}
               </div>
+              <p>*Please upload an image no larger than 70 KB.</p>
             </div>
           </div>
         </div>

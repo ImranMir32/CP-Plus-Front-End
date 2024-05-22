@@ -10,7 +10,7 @@ const GlobalMethodsProvider = ({ children }) => {
 
   const SignIn = async (values) => {
     try {
-      const url = "http://localhost:4000/api/users/login";
+      const url = "https://cp-plus-back-end.onrender.com/api/users/login";
       const response = await axios({
         method: "POST",
         url,
@@ -29,7 +29,7 @@ const GlobalMethodsProvider = ({ children }) => {
 
   const SignUp = async (values) => {
     try {
-      const url = "http://localhost:4000/api/users/signin";
+      const url = "https://cp-plus-back-end.onrender.com/api/users/signin";
       const response = await axios({
         method: "POST",
         url,
@@ -45,11 +45,15 @@ const GlobalMethodsProvider = ({ children }) => {
 
   const imgUpload = async (values) => {
     try {
-      await axios.post("http://localhost:4000/api/image/upload", values, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await axios.post(
+        "https://cp-plus-back-end.onrender.com/api/image/upload",
+        values,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       console.log("Image uploaded successfully");
     } catch (error) {
       console.log(error.message);
@@ -59,7 +63,7 @@ const GlobalMethodsProvider = ({ children }) => {
 
   const updateUser = async (values) => {
     try {
-      const url = `http://localhost:4000/api/users/update/${user.email}`;
+      const url = `https://cp-plus-back-end.onrender.com/api/users/update/${user.email}`;
       const response = await axios({
         method: "PUT",
         url,
@@ -78,7 +82,7 @@ const GlobalMethodsProvider = ({ children }) => {
 
   const resetPassword = async (values) => {
     try {
-      const url = `http://localhost:4000/api/users/reset-password/${user.email}`;
+      const url = `https://cp-plus-back-end.onrender.com/api/users/reset-password/${user.email}`;
       const response = await axios({
         method: "PUT",
         url,
@@ -96,7 +100,7 @@ const GlobalMethodsProvider = ({ children }) => {
 
   const updateScore = async (values) => {
     try {
-      const url = `http://localhost:4000/api/users/update-score/${user.email}`;
+      const url = `https://cp-plus-back-end.onrender.com/api/users/update-score/${user.email}`;
       const response = await axios({
         method: "PUT",
         url,

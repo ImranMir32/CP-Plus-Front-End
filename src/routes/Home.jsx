@@ -7,7 +7,7 @@ import "../styles/quates.css";
 const Home = () => {
   const [quote, setQuote] = useState("");
   const getQuote = async () => {
-    await fetch("http://localhost:4000/api/random-quotes")
+    await fetch("https://cp-plus-back-end.onrender.com/api/random-quotes")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
