@@ -27,7 +27,7 @@ const UserProfile = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/image/${user.email}`)
+      .get(`https://cp-plus-back-end.onrender.com/api/image/${user.email}`)
       .then((res) => {
         console.log("data--->", res.data);
         const base64String = btoa(
@@ -58,7 +58,7 @@ const UserProfile = () => {
       formData.append("email", email);
       try {
         const response = await axios.post(
-          "http://localhost:4000/api/image/upload",
+          "https://cp-plus-back-end.onrender.com/api/image/upload",
           formData
         );
         console.log(response.data);
@@ -73,7 +73,7 @@ const UserProfile = () => {
       formData.append("testImage", file);
       try {
         const response = await axios.put(
-          `http://localhost:4000/api/image/${email}`,
+          `https://cp-plus-back-end.onrender.com/api/image/${email}`,
           formData
         );
         console.log(response.data);
